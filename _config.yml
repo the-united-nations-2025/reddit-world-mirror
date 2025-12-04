@@ -22,9 +22,9 @@ author: Axel Cébille, Haeun Park, Floriane Baudin, Maria Morant, Morgane Chalon
 navbar-links:
   Introduction: "Reddit_world's_mirror.md"
   Data analysis: 
-    - Bottom-up approach: ""
-    - Top-down approach: ""
-    - Conclusion: ""
+    - Bottom-up approach: "Reddit_world's_mirror/## Bottom-up approach"
+    - Top-down approach: "Reddit_world's_mirror/## Top-down approach"
+    - Conclusion: "Reddit_world's_mirror/## Conclusion"
   Resources:
     - Dataset: "https://snap.stanford.edu/data/soc-RedditHyperlinks.html"
     - Repository: "https://github.com/epfl-ada/ada-2025-project-theunitednations2025"
