@@ -3,7 +3,10 @@ layout: page
 ---
 
 {{ content }}
-
+{% capture home_section %}
+{% include_relative RedditWorldMirror.md %}
+{% endcapture %}
+{{ home_section | markdownify }}
 {% assign posts = paginator.posts | default: site.posts %}
 
 <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
