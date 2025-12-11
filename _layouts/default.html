@@ -5,6 +5,7 @@ layout: base
 <div class="intro-header"></div>
 
 <main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
+  <script src="https://cdn.plot.ly/plotly-2.29.1.min.js"></script>
   {% if page.before-content %}
     <div class="before-content">
       {% for file in page.before-content %}
@@ -24,4 +25,3 @@ layout: base
   {% endif %}
 </main>
 
-<script src="https://cdn.plot.ly/plotly-2.29.1.min.js"></script>
