@@ -56,7 +56,7 @@ You got the correct approach! You correctly realized you need to find the cluste
 
 This map finally shows us the different topic groups: the Politics Cluster, the Gaming Cluster, the Neutral News Cluster, and so on. This proves the chaos is organized. 
 
-{% include _includes/plot1.html %}
+{% include plot1.html %}
 
 
 
