@@ -30,14 +30,8 @@ You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see 
 
 _GRAPH: Post properties correlations with negative sentiment_
 
-<iframe 
-    src="sentiment_correlation_plot.html" 
-    title="Interactive Plotly Graph of Post Properties vs. Negative Sentiment Correlation" 
-    frameborder="0" 
-    scrolling="no" 
-    style="width:100%; height:600px;"
->
-</iframe>
+{% include plot1.html %}
+
 
 That chart right there is our proof! It shows exactly which language drives the digital interactions:
 * The red bars (positive correlation) confirm that features like LIWC_Anger and VADER Negative sentiment are strongly linked to conflict links (LINK_SENTIMENT=−1).
