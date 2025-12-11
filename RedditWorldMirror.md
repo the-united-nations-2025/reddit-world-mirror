@@ -58,8 +58,6 @@ This map finally shows us the different topic groups: the Politics Cluster, the 
 
 {% include plot1.html %}
 
-
-
 ## Top-down approach
 
 Mission Goal: Indentify specific known world events from the data ...
