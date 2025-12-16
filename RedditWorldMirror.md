@@ -30,7 +30,19 @@ You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see 
 
 _GRAPH: Post properties correlations with negative sentiment_
 
+---
+layout: post
+title: My Plot Post
+plotly: true # Custom variable
+---
+
+{% if page.plotly %}
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{% endif %}
+
 {% include plot1.html %}
+
+{% include sentiment_correlation_plot.html %}
 
 
 That chart right there is our proof! It shows exactly which language drives the digital interactions:
