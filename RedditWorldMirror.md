@@ -37,6 +37,10 @@ _Post properties associated with negative (red) vs positive (green) sentiment_
 {% include Test7.html %}
 </div>
 
+<div class="plotly-container">
+{% include Test9.html %}
+</div>
+
 That chart right there is our proof! It shows exactly which language drives the digital interactions:
 * The red bars (positive correlation) confirm that features like LIWC_Anger and VADER Negative sentiment are strongly linked to conflict links (LINK_SENTIMENT=−1).
 * The green bars (negative correlation) confirm that positive features like LIWC_Posemo and VADER Positive sentiment are strongly linked to friendly links (LINK_SENTIMENT=+1).
