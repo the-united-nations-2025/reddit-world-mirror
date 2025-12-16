@@ -32,9 +32,9 @@ You don't need a text translator. You just need to focus on two things: the rela
 You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see exactly which words were driving the ±1 sentiment score.
 
 ##### Post properties correlations with negative sentiment
-{% include Test7.html %}
-
 {% include Pie_chart_features_contrib_title_only.html %}
+
+{% include Test7.html %}
 
 That chart right there is our proof! It shows exactly which language drives the digital interactions:
 * The red bars (positive correlation) confirm that features like LIWC_Anger and VADER Negative sentiment are strongly linked to conflict links (LINK_SENTIMENT=−1).
