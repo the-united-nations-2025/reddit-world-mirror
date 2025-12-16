@@ -66,12 +66,4 @@ Now, we switch our approach. Instead of looking at the whole archive first, we u
 
 _INTERACTIVE ELEMENT: SELECT AN EVENT_
 
-You can now select any event from the archive to test the system
-
-Here is the interactive plot I created:
-
-{% include plot1.html %}
-
-{% include sentiment_correlation_plot.html %}
-
-And here is some analysis of the plot above.
+You can now select any event from the archive to test the system ...
