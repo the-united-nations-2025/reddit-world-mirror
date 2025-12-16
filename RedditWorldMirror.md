@@ -22,6 +22,8 @@ You are now looking at the archive. Your first task in this mission is to figure
 
 But don't let the language barrier scare you off. The core emotions-the anger, the sadness, the joy-are universal. Your entire mission is based on analyzing the **network's relationships** and the **emotional scores** as they are the only tool we have left to understand what happened.
 
+{% includes plot1.html %}
+
 ### Deciphering the Code
 
 You don't need a text translator. You just need to focus on two things: the relationships (who linked to whom) and the emotion (±1 score). But first, you need to verify if those surviving emotional scores are actually reliable indicators of real human feelings. Can we prove that certain types of languages led to certain types of links?
