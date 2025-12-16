@@ -38,19 +38,17 @@ You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see 
 
 _GRAPH: Post properties correlations with negative sentiment_
 
+
+{% include sentiment_correlation_plot.html %}
+
+
+{% include Test4.html %}
+
 That chart right there is our proof! It shows exactly which language drives the digital interactions:
 * The red bars (positive correlation) confirm that features like LIWC_Anger and VADER Negative sentiment are strongly linked to conflict links (LINK_SENTIMENT=−1).
 * The green bars (negative correlation) confirm that positive features like LIWC_Posemo and VADER Positive sentiment are strongly linked to friendly links (LINK_SENTIMENT=+1).
 
 This confirms the data is viable for reconstructing the history of the 2014–2017 era. Now let's move on to the history timeline.
-
-
-{% include sentiment_correlation_plot.html %}
-
-{% include Test3.html %}
-
-{% include Test4.html %}
-
 
 ## Bottom-up approach
 
