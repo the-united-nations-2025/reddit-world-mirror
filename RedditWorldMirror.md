@@ -32,7 +32,9 @@ You don't need a text translator. You just need to focus on two things: the rela
 You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see exactly which words were driving the ±1 sentiment score.
 
 _Post properties associated with negative (red) vs positive (green) sentiment_
+<div class="plotly-container">
 {% include Test7.html %}
+</div>
 
 That chart right there is our proof! It shows exactly which language drives the digital interactions:
 * The red bars (positive correlation) confirm that features like LIWC_Anger and VADER Negative sentiment are strongly linked to conflict links (LINK_SENTIMENT=−1).
