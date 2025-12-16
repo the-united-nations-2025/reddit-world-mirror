@@ -44,15 +44,8 @@ That chart right there is our proof! It shows exactly which language drives the 
 
 This confirms the data is viable for reconstructing the history of the 2014–2017 era. Now let's move on to the history timeline.
 
-{% include Pie_chart_features_contrib_title_only.html %}
-
 
 {% include sentiment_correlation_plot.html %}
-
-
-{% include Test2.html %}
-
-
 
 {% include Test3.html %}
 
