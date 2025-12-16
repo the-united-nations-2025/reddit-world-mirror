@@ -32,7 +32,7 @@ You don't need a text translator. You just need to focus on two things: the rela
 You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see exactly which words were driving the ±1 sentiment score.
 
 _Post properties associated with negative (red) vs positive (green) sentiment_
-{% include Test8.html %}
+{% include Test7.html %}
 
 {% include Pie_chart_features_contrib_title_only.html %}
 
