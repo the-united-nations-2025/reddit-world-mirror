@@ -51,7 +51,7 @@ title: ...
 plotly: true # <--- MUST BE PRESENT
 ---
 
-{% include nav.html %}
+{% include sentiment_correlation_plot.html %}
 
 ## Bottom-up approach
 
