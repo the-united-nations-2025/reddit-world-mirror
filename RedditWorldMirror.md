@@ -30,21 +30,6 @@ You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see 
 
 _GRAPH: Post properties correlations with negative sentiment_
 
----
-layout: post
-title: My Plot Post
-plotly: true # Custom variable
----
-
-{% if page.plotly %}
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-{% endif %}
-
-{% include plot1.html %}
-
-{% include sentiment_correlation_plot.html %}
-
-
 That chart right there is our proof! It shows exactly which language drives the digital interactions:
 * The red bars (positive correlation) confirm that features like LIWC_Anger and VADER Negative sentiment are strongly linked to conflict links (LINK_SENTIMENT=−1).
 * The green bars (negative correlation) confirm that positive features like LIWC_Posemo and VADER Positive sentiment are strongly linked to friendly links (LINK_SENTIMENT=+1).
@@ -70,8 +55,6 @@ You got the correct approach! You correctly realized you need to find the cluste
 <iframe src='https://flo.uri.sh/visualisation/26536290/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/26536290/?utm_source=embed&utm_campaign=visualisation/26536290' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 
 This map finally shows us the different topic groups: the Politics Cluster, the Gaming Cluster, the Neutral News Cluster, and so on. This proves the chaos is organized. 
-
-{% include Actual_vs_predicted_SI.html %} 
 
 ## Top-down approach 
 
