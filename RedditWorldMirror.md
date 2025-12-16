@@ -51,7 +51,7 @@ title: ...
 plotly: true # <--- MUST BE PRESENT
 ---
 
-{% include Pie_chart_features_contrib_title_only-icon.html %}
+{% include Pie_chart_features_contrib_title_only.html %}
 
 
 {% include sentiment_correlation_plot.html %}
