@@ -23,8 +23,6 @@ The unique and most important artifact we recovered from the crash is the [**Red
 
 You are now looking at the archive. Your first task in this mission is to figure out if this data is even usable. 
 
-{% include plot1.html %}
-
 ### Deciphering the Code
 
 You don't need a text translator. You just need to focus on two things: the relationships (who linked to whom) and the emotion (±1 score). But first, you need to verify if those surviving emotional scores are actually reliable indicators of real human feelings. Can we prove that certain types of languages led to certain types of links?
