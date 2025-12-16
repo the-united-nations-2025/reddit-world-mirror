@@ -51,6 +51,9 @@ title: ...
 plotly: true # <--- MUST BE PRESENT
 ---
 
+{% include Pie_chart_features_contrib_title_only-icon.png %}
+
+
 {% include sentiment_correlation_plot.html %}
 
 ## Bottom-up approach
