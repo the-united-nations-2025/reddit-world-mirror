@@ -21,6 +21,13 @@ The main **Research Questions** you need to tackle are the following:
 
 The unique and most important artifact we recovered from the crash is the [**Reddit Hyperlink Network**](https://snap.stanford.edu/data/soc-RedditHyperlinks.html). Think of it: millions of digital interactions preserved! It's the single surviving fragment of human communication from those critical years. Everything else is lost.
 
+**The Problem**: When you open the file, it’s a chaotic mess. It looks like an ancient, dead language. Why? Because the original text of the posts is too corrupted to recover. 
+
+It just tracks connections between thousands of subreddits which represent their digital communities. You're probably thinking the same thing: _If the text is corrupted, how can we tell what happened in those years?_
+
+But don't let the language barrier scare you off. The core emotions-the anger, the sadness, the joy-are universal. Your entire mission is based on analyzing the **network's relationships** and the **emotional scores** as they are the only tool we have left to understand what happened.
+
+
 You are now looking at the archive. Your first task in this mission is to figure out if this data is even usable. 
 
 ### Deciphering the Code
@@ -44,7 +51,7 @@ title: ...
 plotly: true # <--- MUST BE PRESENT
 ---
 
-{% include plot1.html %}
+{% include nav.html %}
 
 ## Bottom-up approach
 
