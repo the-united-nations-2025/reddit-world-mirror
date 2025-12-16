@@ -34,6 +34,8 @@ You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see 
 _GRAPH: Post properties correlations with negative sentiment_
 
 
+{% include Pie_chart_features_contrib_title_only.html %}
+
 {% include sentiment_correlation_plot.html %}
 
 
