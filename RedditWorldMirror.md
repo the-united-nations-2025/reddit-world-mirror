@@ -37,6 +37,15 @@ That chart right there is our proof! It shows exactly which language drives the 
 
 This confirms the data is viable for reconstructing the history of the 2014–2017 era. Now let's move on to the history timeline.
 
+
+---
+layout: post
+title: ...
+plotly: true # <--- MUST BE PRESENT
+---
+
+{% include plot1.html %}
+
 ## Bottom-up approach
 
 Mission goal: ...
