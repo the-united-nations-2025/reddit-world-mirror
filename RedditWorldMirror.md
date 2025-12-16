@@ -12,6 +12,7 @@ The main **Research Questions** you need to tackle are the following:
 1. Can world events in times of crisis be reflected in the sentiment evolution of subreddits interactions?
 2. Can world events affect the dynamics of subreddits interactions?
 
+
 ### The Archive: The Single Surviving Fragment
 
 The unique and most important artifact we recovered from the crash is the [**Reddit Hyperlink Network**](https://snap.stanford.edu/data/soc-RedditHyperlinks.html). Think of it: millions of digital interactions preserved! It's the single surviving fragment of human communication from those critical years. Everything else is lost.
