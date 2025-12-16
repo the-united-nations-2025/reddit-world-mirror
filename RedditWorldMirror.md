@@ -38,8 +38,11 @@ _GRAPH: Post properties correlations with negative sentiment_
 
 {% include sentiment_correlation_plot.html %}
 
-
 {% include Test3.html %}
+
+{% include Test4.html %}
+
+{% include Test5.html %}
 
 That chart right there is our proof! It shows exactly which language drives the digital interactions:
 * The red bars (positive correlation) confirm that features like LIWC_Anger and VADER Negative sentiment are strongly linked to conflict links (LINK_SENTIMENT=−1).
