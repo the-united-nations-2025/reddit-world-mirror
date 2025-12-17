@@ -32,12 +32,7 @@ You don't need a text translator. You just need to focus on two things: the rela
 
 You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see exactly which words were driving the ±1 sentiment score.
 
-
-
 _Post properties associated with negative (red) vs positive (green) sentiment_
-
-{% include sentiment_correlation_plot.html %}
-
 {% include Test10.html %}
 
 That chart right there is our proof! It shows exactly which language drives the digital interactions:
