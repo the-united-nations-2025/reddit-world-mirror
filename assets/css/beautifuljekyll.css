@@ -1148,3 +1148,7 @@ pre {
     display: inline-block;
   }
 }
+/* Change all headings to blue */
+h1, h2, h3, h4, h5, h6 {
+    color: #007bff !important;
+}
