@@ -35,9 +35,8 @@ You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see 
 {% include Pie_chart_features_contrib_title_only.html %}
 
 _Post properties associated with negative (red) vs positive (green) sentiment_
-<div class="plotly-container">
+
 {% include Test10.html %}
-</div>
 
 {% include Test10.html %}
 
