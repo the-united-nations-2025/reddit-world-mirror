@@ -39,6 +39,8 @@ _Post properties associated with negative (red) vs positive (green) sentiment_
 {% include Test10.html %}
 </div>
 
+{% include Test10.html %}
+
 That chart right there is our proof! It shows exactly which language drives the digital interactions:
 * The red bars (positive correlation) confirm that features like LIWC_Anger and VADER Negative sentiment are strongly linked to conflict links (LINK_SENTIMENT=−1).
 * The green bars (negative correlation) confirm that positive features like LIWC_Posemo and VADER Positive sentiment are strongly linked to friendly links (LINK_SENTIMENT=+1).
@@ -58,10 +60,6 @@ You can try changing the bin size: day, week, month. But look at the monthly vie
 ##### What kind of approach do you want to take to refine the analysis?
 
 _BUTTON: Clustering OR Option2 OR Option3
-
-<div class="plotly-container">
-{% include Test10.html %}
-</div>
 
 You got the correct approach! You correctly realized you need to find the clusters groups of subreddits that talked about the same topics. You can use the embedding vectors (the digital DNA) of the subreddits and ran the DBSCAN approach to define these clusters based on topics. But don't forget to ignore the random outlier subreddits that don't belong anywhere.
 
