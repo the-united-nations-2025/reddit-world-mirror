@@ -47,6 +47,9 @@ This confirms that the data is viable for reconstructing the history of the 2014
 
 {% include T2.html %}
 
+
+{% include negative_links_toggle.html %}
+
  Now let's move on to the history timeline.
 
 ## Bottom-up approach
