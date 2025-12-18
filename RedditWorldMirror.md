@@ -40,9 +40,6 @@ That chart right there is our proof! It shows exactly which language drives the 
 
 This confirms that the data is viable for reconstructing the history of the 2014–2017 era to understand what happened to Earth.
 
-
-{% include Try1.html %}
-
 {% include Try2.html %}
 
 {% include Try3.html %}
