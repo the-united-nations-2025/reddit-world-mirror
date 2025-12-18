@@ -31,11 +31,6 @@ You don't need a text translator. You just need to focus on two things: the rela
 
 You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see exactly which words were driving the ±1 sentiment score.
 
-
-
-
-
-
 {% include Gaming_neg.html %}
 
 _Post properties associated with negative (red) vs positive (green) sentiment_
@@ -43,9 +38,7 @@ _Post properties associated with negative (red) vs positive (green) sentiment_
 
 {% include hyperlinks.html %}
 
-
 {% include sub1.html %}
-
 
 
 That chart right there is our proof! It shows exactly which language drives the digital interactions:
@@ -59,6 +52,8 @@ This confirms that the data is viable for reconstructing the history of the 2014
  Now let's move on to the history timeline.
 
 ## Bottom-up approach
+
+{% include proportion_negative_over_time.html %}
 
 Mission goal: ...
 
@@ -78,9 +73,6 @@ You got the correct approach! You correctly realized you need to find the cluste
 
 This map finally shows us the different topic groups: the Politics Cluster, the Gaming Cluster, the Neutral News Cluster, and so on. This proves the chaos is organized. 
 
-## Top-down approach 
-
-Mission Goal: Indentify specific known world events from the data ...
 
 {% include k_selection_elbow_silhouette.html.html %}
 
@@ -93,6 +85,11 @@ Mission Goal: Indentify specific known world events from the data ...
 {% include top_negative_subreddits.html.html %}
 
 
+So, we now have tools to find meaningful timespan where conflicts emmerged during the **Great collapse**. We can now link this to the archives on the mothership, where we could find historical events to compare...
+
+## Top-down approach 
+
+Mission Goal: Indentify specific known world events from the data ...
 
 Now, we switch our approach. Instead of looking at the whole archive first, we use the little bit of corrupted external data we have to target specific event dates. We can choose between two major kinds of shocks to see if the network behavior matches:
 * Anticipation of Political Shock: Look for slow builds (like elections) where the tension might have peaked before the event
@@ -101,3 +98,130 @@ Now, we switch our approach. Instead of looking at the whole archive first, we u
 _INTERACTIVE ELEMENT: SELECT AN EVENT_
 
 You can now select any event from the archive to test the system ...
+
+
+## A Top-Down Reconstruction
+
+Through generational knowledge, cross-archive comparison, and our earlier bottom-up analysis, we are already aware that several major world events took place on Earth during the years covered by our dataset. These events are repeatedly referenced in surviving historical records, and their approximate dates are well established.
+
+At this stage, we shift perspective. Instead of asking:
+
+> *“What events might be hidden in the data?”*
+
+we now ask:
+
+> *“What does the data look like when we focus directly on a known global event?”*
+
+This marks the transition to a **top-down approach**.
+
+We center our analysis on four major events:
+
+- **Ebola outbreak (2014)**
+- **Paris terrorist attacks (2015)**
+- **Brexit referendum (2016)**
+- **United States presidential election (late 2016)**
+
+---
+
+### Analysis 1 —  Which subreddits increase their activity the most around a major world event?
+
+To address this question, we measure the activity of each **source subreddit** before and after the event, using the **number of outgoing hyperlinks** as a proxy for participation and engagement.
+
+An increase in activity suggests that a community becomes more involved in cross-subreddit discussions during that period.  
+Our objective is to determine whether the most active communities are **related to the event itself**.
+
+
+#### USA Election
+{% include us_election_neg_activity_animation.html %}
+
+#### Brexit Referendum
+{% include brexit_neg_activity_animation.html %}
+
+#### Paris terrorist attack
+{% include paris_neg_activity_animation.html %}
+
+#### Ebola outbreak
+{% include ebola_neg_activity_animation.html %}
+
+
+---
+
+### Analysis 2 — Which Communities Interact the Most?
+
+Increased activity alone does not tell the full story.
+
+Communities do not act in isolation, they actually **reference, argue, or support one another**.
+For this reason, we extend the analysis to pairs of subreddits
+
+We identify subreddit pairs with the **largest hyperlink activity** during the event time window.  
+These pairs represent communities that interact frequently and consistently, suggesting ongoing dialogue, or conflict, between them.  
+By examining these recurring interactions, we can detect **polarized community pairs** or **event-driven alliances**.
+
+
+#### USA Election
+{% include us_election_pairs.html %}
+
+#### Brexit Referendum
+{% include brexit_topic_pairs.html %}
+
+#### Paris terrorist attack
+{% include paris_topic_pairs.html %}
+
+#### Ebola outbreak
+{% include ebola_topic_pairs.html %}
+
+---
+
+#### **Introducing Event-Specific Knowledge**
+
+At this point, our previous work becomes essential.
+
+Thanks to earlier **bottom-up exploration**, historical records, and intergenerational knowledge, we already possess a rough understanding of the themes surrounding each event.
+From this, we have extracted event-related keywords. This allows us to refine our focus.
+
+---
+
+### Analysis 3 — Activity Through the Lens of Event Keywords
+
+In this third analysis, we revisit the question of subreddit  increased activity but we now filter subreddits by **event-related keywords**, selecting only those whose names are explicitly linked to the event.
+
+This step helps us separate **event-driven activity** from background noise, strengthening the link between observed behavioral changes and the real-world event. Nevertheless, we also lose potential subreddits involved that have a name not related with the event occurred.
+
+
+
+#### USA Election
+{% include us_election_keyword_filtered.html %}
+
+#### Brexit Referendum
+{% include brexit_keyword_filtered.html %}
+
+#### Paris terrorist attack
+{% include paris_keyword_filtered.html %}
+
+#### Ebola outbreak
+{% include ebola_keyword_filtered.html %}
+
+
+---
+
+### Analysis 4 — Event-Focused Interactions Between Communities
+
+Finally, we combine both ideas: **interaction** and **contextual filtering**.
+
+In this analysis, we examine pairs of subreddits that both relate to the event through keywords and show increased hyperlink activity during the event window.  
+This may reveal **coordinated discussion hubs** and **communities shaping dominant narratives.**
+
+
+#### USA Election
+{% include us_election_keyword_topic_pairs.html %}
+
+#### Brexit Referendum
+{% include brexit_keyword_topic_pairs.html %}
+
+#### Paris terrorist attack
+{% include paris_keyword_topic_pairs.html %}
+
+#### Ebola outbreak
+{% include ebola_keyword_topic_pairs.html %}
+
+
