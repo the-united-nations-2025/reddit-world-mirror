@@ -39,10 +39,12 @@ You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see 
 {% include Gaming_neg.html %}
 
 _Post properties associated with negative (red) vs positive (green) sentiment_
-{% include hyperlinks1.html %}
+{% include Test10.html %}
+
+{% include hyperlinks.html %}
 
 
-{% include k_selection_elbow_silhouette.html.html %}
+
 
 
 
@@ -79,6 +81,18 @@ This map finally shows us the different topic groups: the Politics Cluster, the 
 ## Top-down approach 
 
 Mission Goal: Indentify specific known world events from the data ...
+
+{% include k_selection_elbow_silhouette.html.html %}
+
+{% include pca_plot.html.html %}
+
+{% include significant_increases_plot.html.html %}
+
+{% include t_sne_plot.html.html %}
+
+{% include top_negative_subreddits.html.html %}
+
+
 
 Now, we switch our approach. Instead of looking at the whole archive first, we use the little bit of corrupted external data we have to target specific event dates. We can choose between two major kinds of shocks to see if the network behavior matches:
 * Anticipation of Political Shock: Look for slow builds (like elections) where the tension might have peaked before the event
