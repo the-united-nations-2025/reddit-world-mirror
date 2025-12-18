@@ -38,7 +38,13 @@ That chart right there is our proof! It shows exactly which language drives the 
 * The red bars (positive correlation) confirm that features like LIWC_Anger and VADER Negative sentiment are strongly linked to conflict links (LINK_SENTIMENT=−1).
 * The green bars (negative correlation) confirm that positive features like LIWC_Posemo and VADER Positive sentiment are strongly linked to friendly links (LINK_SENTIMENT=+1).
 
-This confirms the data is viable for reconstructing the history of the 2014–2017 era. Now let's move on to the history timeline.
+This confirms that the data is viable for reconstructing the history of the 2014–2017 era to understand what happened to Earth.
+
+
+{% include Try1.html %}
+
+
+ Now let's move on to the history timeline.
 
 ## Bottom-up approach
 
