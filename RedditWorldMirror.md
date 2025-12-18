@@ -45,6 +45,7 @@ This confirms that the data is viable for reconstructing the history of the 2014
 
 {% include Try2.html %}
 
+{% include Try3.html %}
 
  Now let's move on to the history timeline.
 
