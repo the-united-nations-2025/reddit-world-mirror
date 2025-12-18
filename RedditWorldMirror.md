@@ -33,6 +33,7 @@ You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see 
 
 {% include hyperlinks.html %}
 
+
 {% include Gaming_neg.html %}
 
 _Post properties associated with negative (red) vs positive (green) sentiment_
