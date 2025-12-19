@@ -94,14 +94,14 @@ How are we going to group similar subreddits ? From the last remaining piece of 
 Using a technique called **clustering**, we can group vectors by how close they are to each other. **K-Means** is an unsupervised machine learning algorithm used to group data into K clusters based on similarity.
 
 <details>
-  <summary><b>How K-Means works</b></summary>
-  <p>
-   1. Choose the number of clusters (K).
-   2. Initialize (K) centroids (cluster centers).
-   3. Assign each data point to the nearest centroid (usually using Euclidean distance).
-   4. Update each centroid as the mean of the points assigned to it.
-   5. Repeat steps 3–4 until assignments no longer change or convergence is reached.
-  </p>
+<summary><b>How K-Means works</b></summary>
+<ol>
+<li>Choose the number of clusters (K).</li>
+<li>Initialize (K) centroids (cluster centers).</li>
+<li>Assign each data point to the nearest centroid (usually using Euclidean distance).</li>
+<li>Update each centroid as the mean of the points assigned to it.</li>
+<li>Repeat steps 3–4 until assignments no longer change or convergence is reached.</li>
+</ol>
 </details>
 
 Firstly, to find the optimal number of cluster (i.e the optimal number of different topics), we are going to use the **Elbow Method**.
@@ -109,13 +109,13 @@ Firstly, to find the optimal number of cluster (i.e the optimal number of differ
 The **Elbow Method** is a heuristic used to choose the optimal number of clusters (K) in clustering algorithms such as K-Means.
 
 <details>
-  <summary><b>How Elbow Method works</b></summary>
-  <p>
-   1. Run the clustering algorithm for different values of (K).
-   2. Compute the within-cluster sum of squares (WCSS) for each (K).
-   3. Plot WCSS versus (K).
-   4. Identify the “elbow” point where the decrease in WCSS starts to level off.
-  </p>
+<summary><b>How the Elbow Method works</b></summary>
+<ol>
+<li>Run the clustering algorithm for different values of (K).</li>
+<li>Compute the within-cluster sum of squares (WCSS) for each (K).</li>
+<li>Plot WCSS versus (K).</li>
+<li>Identify the “elbow” point where the decrease in WCSS starts to level off.</li>
+</ol>
 </details>
 
 **Key idea**:
@@ -131,15 +131,18 @@ Secondly, we will apply a method known as the **DB Scan** to remove the outliers
 **DBSCAN** is an unsupervised clustering algorithm that groups data based on **point density**, rather than distance to a centroid.
 
 <details>
-  <summary><b>How DBSCAN works</b></summary>
-  <p>
-  1. Define two parameters:
-    * (eps): neighborhood radius
-    * **MinPts**: minimum number of points to form a dense region
-  2. Points with at least **MinPts** neighbors within ( \varepsilon ) are **core points**.
-  3. Core points and their neighbors form clusters.
-  4. Points not reachable from any core point are labeled as **noise**.
-  </p>
+<summary><b>How DBSCAN works</b></summary>
+<ol>
+<li>Define two parameters:
+<ul>
+<li>$\epsilon$ (eps): neighborhood radius</li>
+<li><b>MinPts</b>: minimum number of points to form a dense region</li>
+</ul>
+</li>
+<li>Points with at least <b>MinPts</b> neighbors within $\epsilon$ are <b>core points</b>.</li>
+<li>Core points and their neighbors form clusters.</li>
+<li>Points not reachable from any core point are labeled as <b>noise</b>.</li>
+</ol>
 </details>
 
 We now have clusters of similar subreddits ! 
@@ -214,8 +217,6 @@ But what is a significant increase ?
 
 We followed two methods:
 
-1. Rolling Average
-
 <details>
   <summary><b>1. Rolling Average</b></summary>
   <p>
@@ -233,10 +234,9 @@ where:
   </p>
 </details>
 
-2. Modeling using a Poisson Law
 
 <details>
-  <summary><b>2. Poisson Law</b></summary>
+  <summary><b>2. Modeling using a Poisson Law</b></summary>
   <p>
   Let's assume our negative/positive follows a Poisson law. This is appropriate because:
 
