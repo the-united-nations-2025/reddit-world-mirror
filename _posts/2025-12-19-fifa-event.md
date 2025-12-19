@@ -3,6 +3,7 @@ layout: post
 title: SPORTS - FIFA World Cup 2014
 subtitle: Case study for graph-based analysis
 cover-img: /assets/img/football_cover.png
+thumbnail-img: /assets/img/football_cover.png
 ---
 
 # FIFA WORLD CUP 2014
