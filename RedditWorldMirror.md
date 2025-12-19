@@ -209,44 +209,6 @@ This could be usefull if we want to identify a **significant event** related to 
 But what is a **significant increase** ?
 
 We followed two methods:
-
-<details>
-  <summary><b>1. Rolling Average</b></summary>
-  <div markdown="1" style="margin-top: 10px; padding-left: 20px;">
-
-**Why?** Because the rolling average acts as a smoothed baseline, calculated using a defined window (you can define the wanted window as a parameter), which helps to visually identify deviations from the expected trend. When the post sentiment count falls **above** the rolling average, it suggests that the post sentiment count has **increased** relative to its typical trend.
-
-Here, a simple moving average was implemented as followed:
-
-$$\text{RollingAvg}_t = \frac{1}{w} \sum_{i=0}^{w-1} x_{t-i}$$
-
-where:
-* $x_t$: count at time $t$
-* $w$: window size (number of points in the average)
-* $\text{RollingAvg}_t$: average of the current and previous $w-1$ counts
-
-  </div>
-</details>
-
-<details>
-  <summary><b>1. Rolling Average</b></summary>
-  <div markdown="1" style="margin-top: 10px; padding-left: 10px;">
-
-**Why?** Because the rolling average acts as a smoothed baseline, calculated using a defined window (you can define the wanted window as a parameter), which helps to visually identify deviations from the expected trend. When the post sentiment count falls **above** the rolling average, it suggests that the post sentiment count has **increased** relative to its typical trend.
-
-Here, a simple moving average was implemented as followed:
-
-$$\text{RollingAvg}_t = \frac{1}{w} \sum_{i=0}^{w-1} x_{t-i}$$
-
-where:
-* $x_t$: count at time $t$
-* $w$: window size (number of points in the average)
-* $\text{RollingAvg}_t$: average of the current and previous $w-1$ counts
-
-  </div>
-</details>
-
-
 <details>
   <summary><b>1. Rolling Average</b></summary>
   <div style="margin-top: 10px;">
@@ -265,34 +227,17 @@ where:
   </div>
 </details>
 
-
 <details>
-  <summary><b>1. Rolling Average</b></summary>
-  <div style="margin-top: 10px;">
-    <b>Why?</b> Because the rolling average acts as a smoothed baseline, calculated using a defined window (you can define the wanted window as a parameter), which helps to visually identify deviations from the expected trend. When the post sentiment count falls <b>above</b> the rolling average, it suggests that the post sentiment count has <b>increased</b> relative to its typical trend. Here, a simple moving average was implemented as followed:
-    
-    $$\text{RollingAvg}_t = \frac{1}{w} \sum_{i=0}^{w-1} x_{t-i}$$
-    
-    where:
-    <ul>
-      <li>$x_t$: count at time $t$</li>
-      <li>$w$: window size (number of points in the average)</li>
-      <li>$\text{RollingAvg}_t$: average of the current and previous $w-1$ counts</li>
-    </ul>
+  <summary><b>2. Poisson distribution</b></summary>
+  <div markdown="1" style="margin-top: 10px; padding-left: 20px;">
+Let's assume our negative/positive follows a Poisson law. This is appropriate because:
+
+* **Counts of events are observed in a fixed unit of time, space, or sequence:** In your case, positive or negative counts are observed per time step.
+* **We assume events occur independently:** Each sentiment count at one time step is assumed not to directly affect counts at another time step, at least within the window.
+* **We assume the mean equals the variance (or approximately):** Poisson assumes that the expected count ($\lambda$) is equal to the variance of counts.
+* Small deviations are acceptable, but large overdispersion may require a Negative Binomial model.
+
   </div>
-</details>
-
-
-<details>
-  <summary><b>1. Rolling Average</b></summary>
-  <p>
-  **Why** ? Because the rolling average acts as a smoothed baseline, calculated using a defined window (you can define the wanted window as a parameter), which helps to visually identify deviations from the expected trend. When the post sentiment count falls **above** the rolling average, it suggests that the post sentiment count has **increased** relative to its typical trend. Here, a simple moving average was implemented as followed:
-  $$\text{RollingAvg}_t = \frac{1}{w} \sum_{i=0}^{w-1} x_{t-i}$$
-  where:
-  - $x_t$: count at time t
-  - $w$: window size (number of points in the average)
-  - $\\text{RollingAvg}_t$: average of the current and previous  counts
-  </p>
 </details>
 
 
@@ -314,12 +259,13 @@ We assume the **mean** equals the **variance** (or approximately).
 Poisson assumes that the expected count (λ) is equal to the variance of counts.
 
 Small deviations are acceptable, but large overdispersion may require a Negative Binomial model.
+  </p>
+</details>
+
 
 We are going to take the count evolution on a sliding window of a **given duration** (ex: 3 months). In each time window, we will fit the counts to a Poisson Law and look at the increase or decrease.
 
 This method uses a **Generalized Linear Model (GLM) with a Poisson family** to detect **statistically significant increasing trends** in count data over time.
-  </p>
-</details>
 
 
 Model formulation
