@@ -6,13 +6,11 @@ cover-img: /assets/img/football_cover.png
 thumbnail-img: /assets/img/football_cover.png
 ---
 
-# FIFA WORLD CUP 2014
-
 ![event_image](https://the-united-nations-2025.github.io/reddit-world-mirror/assets/img/FIFA_WORLD_CUP.png)
 
 Space football is not very popular (_you can imagine why_) but, many people around you enjoy to gather together to watch old football games (_from the good old days..._). As you also really enjoy it and recently saw 2014 Germany-Argentina final, you decide to study this event.
 
-## Event timespan and keywords
+## Event timespan and select subreddits
 You define the following timespan: 
 - **START** = 12th June 2014
 - **END** = 17th July 2014 (extended end, to take into account people reactions)
@@ -22,7 +20,7 @@ You will filter subreddits that belong to the _Sports_ cluster, and then select 
 
 ## Time analysis of node metrics
 **Expectations**:
-The subreddits linked to the World cup are expected to become the center of attention during the event, being cited by news subreddits and having more interactions than in normal times.
+The subreddits linked to the World cup are expected to become the center of attention during the event, being cited by new subreddits and having more interactions than in normal times.
 
 
 **Results**:
@@ -32,7 +30,7 @@ With this previous knowledge, **violin pots** are quite useful to observe the di
 
 <details>
 <summary><b>All subreddits</b></summary>
-<p>No difference between the time periods when we use all the subreddits.</p>
+<p>No difference between the time periods when all the subreddits are used.</p>
 </details>
 
 <details>

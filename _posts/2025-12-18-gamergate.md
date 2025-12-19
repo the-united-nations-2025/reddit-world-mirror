@@ -6,12 +6,12 @@ cover-img: /assets/img/Gaming_cover.jpg
 thumbnail-img: /assets/img/Gaming_cover.jpg
 ---
 
-Even tho most of the world events you found in the mothership archives are political events, let's take a break from all this politics! Fortunately, on the spacecraft, we have the best interplanetary gamer! He must know some stories about gaming... Let's to switch to gaming, but actually not the fun part... Here is what he told you about:
+Even tho most of the world events you found in the mothership archives are political events, let's take a break from all this politics! Fortunately, on the spacecraft, we have the best interplanetary gamer! He must know some stories about gaming... Let's switch to gaming, but actually not the fun part... Here is what he told you about:
 
 ![event_image](https://the-united-nations-2025.github.io/reddit-world-mirror/assets/img/GAMERGATE.png)
 
 This Gamergate case study is a perfect example of communities rivalries, as you can analyze both the 'Gaming' side and the 'Social Justice' side. It is now that the sentiment of hyperlinks become handy! 
-> *Key tool*: The graphs created with iGraph contain the sentiment information on each edge. From this, we can compute the proportion of negative and positive links going to or going out of a node.
+> *Key tool*: The graphs created with iGraph contain the sentiment information on each edge. From this, you can compute the proportion of negative and positive links going to or going out of a node.
 
 Let's try to see if you can find some remaining scars of this event in the Reddit hyperlink network.
 
@@ -21,13 +21,14 @@ The Gamergate started in August 2014 and ended in early 2015, so you decided the
 - **END** = 1st January 2015
 
 ## Sentiment analysis - Gaming subreddits
-First, we focus on the **gaming** community, thought to be the source of the attacks during the Gamergate.
+First, you focus on the **gaming** community, thought to be the source of the attacks during the Gamergate.
 
-* **Gaming** : both the cluster and the keyword filtering are based on broad gaming, the filtering by weywords might be more specific to gaming while the cluster might contain also other subreddits having common users activity but that are a bit further from gaming.
+* **Gaming** : both the cluster and the keyword filtering are based on broad gaming, the filtering by keywords might be more specific to gaming while the cluster might contain also other subreddits having common users activity but that are a bit further from gaming.
+*NB: Both filtering methods lead to more than 100 subreddits in each case, making CCDF plots and statistical tests reliable for analysis.*
 
 <iframe src='https://flo.uri.sh/story/3516066/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
 
-*NB: Both filtering methods lead to more than 100 subreddits in each case, making CCDF plots and statistical tests reliable for analysis.*
+
 
 
 **Expectations**:
@@ -37,15 +38,14 @@ The interesting metric to study for the gaming community is the proportion of ne
 
 {% include Gamergate_gaming_outneg_hist.html %}
 
-As the previous metrics we studied in the US Election case study, the ***out_neg_prop*** metrics present a heavy-tailed distribution, thus making the CCDF plots helpful to compare the distribution evolution of this metric. 
+As the previous metrics studied in the US Election case study, the ***out_neg_prop*** metrics present a heavy-tailed distribution, thus making the CCDF plots helpful to compare the distribution evolution of this metric. 
 
 {% include Gamergate_gaming_outneg_CCDF.html %}
-
-Both visualization and non-parametric Kruskal-Wallis test suggest non-significant differences and no clear trends for both filtering methods...
 
 ---
 
 > 1. CLUSTER-FILTERED
+
 **Kolmogorov–Smirnov distribution test**  
 _Metric: proportion of negative hyperlinks sent_
 
@@ -57,7 +57,8 @@ _Metric: proportion of negative hyperlinks sent_
 
 ---
 
-> 2. CLUSTER-FILTERED
+> 2. KEYWORD-FILTERED
+
 **Kolmogorov–Smirnov distribution test**  
 _Metric: proportion of negative hyperlinks sent_
 
@@ -68,6 +69,7 @@ _Metric: proportion of negative hyperlinks sent_
 | Before vs After      | 0.3577  | 0.082882 | Not significant |
 
 ---
+Both visualization and non-parametric Kruskal-Wallis test suggest non-significant differences and no clear trends for both filtering methods...
 
 **Interpretation**:
 > Unconclusive analysis... *but don't be discouraged, you can still look at the target communities now!*
@@ -87,20 +89,20 @@ The interesting metrics here are both the **proportion of negative hyperlinks of
 
 {% include Gamergate_socialjustice_hist.html %}
 
-> As expected both in and out negative link proportions follow a heavy-tail distribution that was studied using CCDF log-log plots.
+As expected both in and out negative link proportions follow a heavy-tail distribution that was studied using CCDF log-log plots.
 
 {% include Gamergate_socialjustice_CCDF.html %}
 
-> No significant differences in distribution was observed using Kolmogorov-Smirnov non-parametric test for both methods of filtering.
+No significant differences in distribution was observed using Kolmogorov-Smirnov non-parametric test for both methods of filtering.
 
-Considering the low number of topic-linked subreddits (_n=17_), we shall be careful about interpretations. Even tho the distribution of negative linked sent by the toppic-linked subreddits seems to be right shifted, no consistent clear trend appear in the CCDF plots!
+Considering the low number of topic-linked subreddits (_n=17_), you should be careful about interpretations. Even tho the distribution of negative linked sent by the topic-linked subreddits seems to be right shifted, no consistent clear trend appear in the CCDF plots!
 
 **Interpretation**:
-Another unconclusive analysis... The attacks between gaming and social justice subreddits are not perpectible with this sentiment analysis of the network.
+> Another unconclusive analysis... The attacks between gaming and social justice subreddits are not perpectible with this sentiment analysis of the network.
 After taking a break in the low-gravity rooms to clear your minds, you decide to explore this further and dive into the connections between each topic-linked subgraphs.
 
 ## Structural analysis - subgraphs interactions
-***How can we represent the two subgraphs evolution of interactions?***
+***How can you represent the two subgraphs evolution of interactions?***
 
 <details>
 <summary><b>Key tool: average shortest path length</b></summary>
@@ -108,18 +110,52 @@ After taking a break in the low-gravity rooms to clear your minds, you decide to
 </p>
 </details>
 
-**Expectations**: 
-> A lower average path length would mean that those two groups are more interacting (or have more common intermediate) during this time period.
+**Expectations**: A lower average path length would mean that those two groups are more interacting (or have more common intermediate nodes) during this time period.
 
 **Results**:
->For both methods of clustering, the evolution of the average path length between each subgraph is significantly increasing from before to during and then to after the Gamergate event.
--   *Kruskal Wallis test, followed by Dunn's posthoc test were performed and gave statistically significant differences*
 
 ![event_image](https://the-united-nations-2025.github.io/reddit-world-mirror/assets/img/average_short_interaction_GAMERGATE.png)
 
-**Interpretation**:
-The two subgraphs are less and less linked over the course of the event, which reveals not increase in interactions between the Gaming subreddits and their targets.
+---
+> 1. CLUSTER-FILTERED
 
-> ***What can we conclude from this case study?***
-The Gamergate event is not perceptible in the Reddit dynamics, which is probably because the majority of the attacks happened in other social Networks (like Twitter) and Reddit only had follow up waves not detected here.
+**Kruskal-Wallis test**  
+- H-stat: 368.319  
+- p-value: 1.05e-80  
+> At least two groups have different medians
+
+**Post-hoc Dunn test**
+
+| Group1 | Group2  | p-value        | Significant |
+|--------|---------|---------------:|:-----------:|
+| After  | Before  | 1.76e-78       | Significant |
+| After  | During  | 9.18e-10       | Significant |
+| Before | During  | 1.34e-36       | Significant |
+
+---
+
+> 2. KEYWORD-FILTERED
+
+**Kruskal-Wallis test**  
+- H-stat: 118.132  
+- p-value: 2.23e-26  
+> At least two groups have different medians
+
+**Post-hoc Dunn test**
+
+| Group1 | Group2  | p-value        | Significant |
+|--------|---------|---------------:|:-----------:|
+| After  | Before  | 8.91e-25       | Significant |
+| After  | During  | 1.60e-02       | Significant |
+| Before | During  | 3.05e-15       | Significant |
+
+---
+
+Kruskal Wallis test, followed by Dunn's posthoc test were performed and gave statistically significant differences. For both methods of clustering, the evolution of the average path length between each subgraph is significantly increasing from before to during and then to after the Gamergate event.
+
+**Interpretation**:
+>The two subgraphs are less and less linked over the course of the event, which reveals no increase in interactions between the Gaming subreddits and their targets.
+
+***What can you conclude from this case study?***
+>The Gamergate event is not perceptible in the Reddit dynamics, which is probably because the majority of the attacks happened in other social Networks (like Twitter) and Reddit only had follow-up waves not detected here.
 
