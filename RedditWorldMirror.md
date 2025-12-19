@@ -96,13 +96,9 @@ Using a technique called clustering, we can group vectors by how close they are 
 How it works:
 
 1. Choose the number of clusters (K).
-
 2. Initialize (K) centroids (cluster centers).
-
 3. Assign each data point to the nearest centroid (usually using Euclidean distance).
-
 4. Update each centroid as the mean of the points assigned to it.
-
 5. Repeat steps 3–4 until assignments no longer change or convergence is reached.
 
 Firstly, to find the optimal number of cluster (i.e the optimal number of different topics), we are going to use the **Elbow Method**.
@@ -112,22 +108,46 @@ The **Elbow Method** is a heuristic used to choose the optimal number of cluster
 How it works:
 
 1. Run the clustering algorithm for different values of (K).
-
 2. Compute the within-cluster sum of squares (WCSS) for each (K).
-
 3. Plot WCSS versus (K).
-
 4. Identify the “elbow” point where the decrease in WCSS starts to level off.
 
 **Key idea**:
 
 The elbow represents a good trade-off between model complexity (number of clusters) and clustering quality.
 
-
 {% include k_selection_elbow_silhouette.html.html %}
 
+We find an optimal k of 4. This seems a bit low and not specific enough, we might have too broad cluster subjects. The second best option seems to be a better alternative. We would likely choose 13 clusters.
+
+Secondly, we will apply a method known as the **DB Scan** to remove the outliers that are far away from others subreddits (i.e maybe too unique).
+
+**DBSCAN** is an unsupervised clustering algorithm that groups data based on **point density**, rather than distance to a centroid.
+
+How it works:
+
+1. Define two parameters:
+* (eps): neighborhood radius
+* **MinPts**: minimum number of points to form a dense region
+2. Points with at least **MinPts** neighbors within ( \varepsilon ) are **core points**.
+3. Core points and their neighbors form clusters.
+4. Points not reachable from any core point are labeled as **noise**.
+
+...
 
 
+#### T-SNE/PCA Plotting of clusters
+
+Let's visually confirm that similar subreddits sit close to each other in the embedding space. But right now we have multidimensional vectors that are nos suited for plotting in 2d or 3d. We are going to use the **T-SNE and PCA dimension reduction method**.
+
+<details>
+  <summary><b>Click here to see technical details about the DBSCAN settings</b></summary>
+  <p>
+    We used an epsilon value of 0.5 and a minimum of 10 samples. We found that this 
+    was the best way to get rid of the "noise" subreddits while keeping the 
+    main clusters like Politics and Gaming intact.
+  </p>
+</details>
 
 {% include pca_plot.html.html %}
 

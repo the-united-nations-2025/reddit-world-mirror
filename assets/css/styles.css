@@ -1,0 +1,31 @@
+details {
+    background: #f9f9f9;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+details[open] {
+    background: #ffffff;
+    border-color: #3498db;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 600;
+    outline: none;
+    color: #2c3e50;
+}
+
+summary:hover {
+    color: #3498db;
+}
+
+/* This adds a bit of space for the content inside */
+details p {
+    margin-top: 10px;
+    color: #555;
+    line-height: 1.6;
+}
