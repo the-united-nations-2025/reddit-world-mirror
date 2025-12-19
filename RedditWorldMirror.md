@@ -213,6 +213,25 @@ We followed two methods:
 <details>
   <summary><b>1. Rolling Average</b></summary>
   <div style="margin-top: 10px;">
+    <p><b>Why?</b> Because the rolling average acts as a smoothed baseline, calculated using a defined window (you can define the wanted window as a parameter), which helps to visually identify deviations from the expected trend. When the post sentiment count falls <b>above</b> the rolling average, it suggests that the post sentiment count has <b>increased</b> relative to its typical trend.</p>
+    
+    <p>Here, a simple moving average was implemented as followed:</p>
+    
+    <p>$$\text{RollingAvg}_t = \frac{1}{w} \sum_{i=0}^{w-1} x_{t-i}$$</p>
+    
+    <p>where:</p>
+    <ul>
+      <li>$x_t$: count at time $t$</li>
+      <li>$w$: window size (number of points in the average)</li>
+      <li>$\text{RollingAvg}_t$: average of the current and previous $w-1$ counts</li>
+    </ul>
+  </div>
+</details>
+
+
+<details>
+  <summary><b>1. Rolling Average</b></summary>
+  <div style="margin-top: 10px;">
     <b>Why?</b> Because the rolling average acts as a smoothed baseline, calculated using a defined window (you can define the wanted window as a parameter), which helps to visually identify deviations from the expected trend. When the post sentiment count falls <b>above</b> the rolling average, it suggests that the post sentiment count has <b>increased</b> relative to its typical trend. Here, a simple moving average was implemented as followed:
     
     $$\text{RollingAvg}_t = \frac{1}{w} \sum_{i=0}^{w-1} x_{t-i}$$
