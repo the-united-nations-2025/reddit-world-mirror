@@ -60,7 +60,7 @@ To make it even clearer, we summarized the data to see the "Net Aggression." We 
 
 This summary shows us that conflict wasn't just random noise: it was driven by specific cnetral nodes. Why this matters for your mission: Identifying these central nodes tells us who held the power and who caused the friction. If we’re going to understand how this society broke down, we have to follow the people who were starting the most fires.
 
-Mission Status: We now have our tools and we know who the players are. Now, we can finally zoom out and look at the whole timeline to see if we can spot the moment Earth started to trend toward chaos. Let's start the Bottom-Up analysis by looking at the timeline.
+**Mission Status**: We now have our tools and we know who the players are. Now, we can finally zoom out and look at the whole timeline to see if we can spot the moment Earth started to trend toward chaos. Let's start the Bottom-Up analysis by looking at the timeline.
 
 ## Bottom-up approach
 
@@ -91,26 +91,32 @@ But the majority of subreddits aren't very active, with very few posts in the sp
 
 How are we going to group similar subreddits ? From the last remaining piece of information from earth great collapse, we found ancient representations of the said subreddit that they called embeddings. Maybe we can use that to our advantage: what if two similar subreddit had similar embeddings ?
 
-Using a technique called clustering, we can group vectors by how close they are to each other. K-Means is an unsupervised machine learning algorithm used to group data into K clusters based on similarity.
+Using a technique called **clustering**, we can group vectors by how close they are to each other. **K-Means** is an unsupervised machine learning algorithm used to group data into K clusters based on similarity.
 
-How it works:
-
-1. Choose the number of clusters (K).
-2. Initialize (K) centroids (cluster centers).
-3. Assign each data point to the nearest centroid (usually using Euclidean distance).
-4. Update each centroid as the mean of the points assigned to it.
-5. Repeat steps 3–4 until assignments no longer change or convergence is reached.
+<details>
+  <summary><b>How K-Means works</b></summary>
+  <p>
+   1. Choose the number of clusters (K).
+   2. Initialize (K) centroids (cluster centers).
+   3. Assign each data point to the nearest centroid (usually using Euclidean distance).
+   4. Update each centroid as the mean of the points assigned to it.
+   5. Repeat steps 3–4 until assignments no longer change or convergence is reached.
+  </p>
+</details>
 
 Firstly, to find the optimal number of cluster (i.e the optimal number of different topics), we are going to use the **Elbow Method**.
 
 The **Elbow Method** is a heuristic used to choose the optimal number of clusters (K) in clustering algorithms such as K-Means.
 
-How it works:
-
-1. Run the clustering algorithm for different values of (K).
-2. Compute the within-cluster sum of squares (WCSS) for each (K).
-3. Plot WCSS versus (K).
-4. Identify the “elbow” point where the decrease in WCSS starts to level off.
+<details>
+  <summary><b>How Elbow Method works</b></summary>
+  <p>
+   1. Run the clustering algorithm for different values of (K).
+   2. Compute the within-cluster sum of squares (WCSS) for each (K).
+   3. Plot WCSS versus (K).
+   4. Identify the “elbow” point where the decrease in WCSS starts to level off.
+  </p>
+</details>
 
 **Key idea**:
 
@@ -124,21 +130,64 @@ Secondly, we will apply a method known as the **DB Scan** to remove the outliers
 
 **DBSCAN** is an unsupervised clustering algorithm that groups data based on **point density**, rather than distance to a centroid.
 
-How it works:
+<details>
+  <summary><b>How DBSCAN works</b></summary>
+  <p>
+  1. Define two parameters:
+    * (eps): neighborhood radius
+    * **MinPts**: minimum number of points to form a dense region
+  2. Points with at least **MinPts** neighbors within ( \varepsilon ) are **core points**.
+  3. Core points and their neighbors form clusters.
+  4. Points not reachable from any core point are labeled as **noise**.
+  </p>
+</details>
 
-1. Define two parameters:
-* (eps): neighborhood radius
-* **MinPts**: minimum number of points to form a dense region
-2. Points with at least **MinPts** neighbors within ( \varepsilon ) are **core points**.
-3. Core points and their neighbors form clusters.
-4. Points not reachable from any core point are labeled as **noise**.
-
-...
-
+We now have clusters of similar subreddits ! 
 
 #### T-SNE/PCA Plotting of clusters
 
 Let's visually confirm that similar subreddits sit close to each other in the embedding space. But right now we have multidimensional vectors that are nos suited for plotting in 2d or 3d. We are going to use the **T-SNE and PCA dimension reduction method**.
+
+**PCA** is a linear dimensionality reduction technique that projects data onto a lower-dimensional space while maximizing variance.
+
+<details>
+  <summary><b>How PCA works</b></summary>
+  <p>
+    1. Center the data.
+    2. Compute the covariance matrix.
+    3. Extract eigenvectors (principal components).
+    4. Project data onto the top components with the largest eigenvalues.
+    
+    Key characteristics:
+    1. Linear method.
+    2. Preserves global structure and variance.
+    3. Components are orthogonal.
+    4. Sensitive to feature scaling.
+    5. Interpretable components.
+  </p>
+</details>
+
+{% include pca_plot.html.html %}
+
+**t-SNE** is a non-linear dimensionality reduction method mainly used for visualizing high-dimensional data in 2D or 3D.
+
+<details>
+  <summary><b>How t-SNE works</b></summary>
+  <p>
+    1. Convert pairwise distances into probabilities in high-dimensional space.
+    2. Do the same in low-dimensional space.
+    3. Minimize the difference between the two probability distributions.
+    
+    Key characteristics:
+    1. Preserves local neighborhood structure.
+    2. Reveals clusters clearly in visualizations.
+    3. Non-linear and non-parametric.
+    4. Computationally expensive.
+    5. Not suitable for preserving global distances or for downstream modeling.
+  </p>
+</details>
+
+{% include t_sne_plot.html.html %}
 
 <details>
   <summary><b>Click here to see technical details about the DBSCAN settings</b></summary>
@@ -149,11 +198,125 @@ Let's visually confirm that similar subreddits sit close to each other in the em
   </p>
 </details>
 
-{% include pca_plot.html.html %}
+**Observations**:
+
+The PCA plot is less representative with no clear visual cluster of nodes.
+
+On the other hand, the T-SNE plot clearly shows clusters, corresponding to each cluster theme we found. It is important to note that the classification isn't perfect but shows interesting informations still.
+
+
+#### Cluster neg/pos comments evolution analysis
+Now that we have our clusters, we can analyze the trend evolution of negative or positive posts for a given topic.
+
+This could be usefull if we want to identify a significant event related to a given topic (for example: a major politic event at time t might lead to a significant increase in the trend of the politic cluster.)
+
+But what is a significant increase ?
+
+We followed two methods:
+
+1. Rolling Average
+
+<details>
+  <summary><b>1. Rolling Average</b></summary>
+  <p>
+  Why ? Because the rolling average acts as a smoothed baseline, calculated using a defined window (you can define the wanted window as a parameter), which helps to visually identify deviations from the expected trend. When the post sentiment count falls above the rolling average, it suggests that the post sentiment count has increased relative to its typical trend. Here, a simple moving average was implemented as followed:
+
+ 
+
+where:
+
+: count at time t
+
+: window size (number of points in the average)
+
+: average of the current and previous  counts
+  </p>
+</details>
+
+2. Modeling using a Poisson Law
+
+<details>
+  <summary><b>2. Poisson Law</b></summary>
+  <p>
+  Let's assume our negative/positive follows a Poisson law. This is appropriate because:
+
+Counts of events are observed in a fixed unit of time, space, or sequence.
+
+In your case, positive or negative counts are observed per time step.
+
+We assume events occur independently.
+
+Each sentiment count at one time step is assumed not to directly affect counts at another time step, at least within the window.
+
+We assume the mean equals the variance (or approximately).
+
+Poisson assumes that the expected count (λ) is equal to the variance of counts.
+
+Small deviations are acceptable, but large overdispersion may require a Negative Binomial model.
+
+We are going to take the count evolution on a sliding window of a given duration (ex: 3 months). In each time window, we will fit the counts to a Poisson Law and look at the increase or decrease.
+
+This method uses a Generalized Linear Model (GLM) with a Poisson family to detect statistically significant increasing trends in count data over time.
+  </p>
+</details>
+
+
+Model formulation
+
+For each sliding time window, the following model is fitted:
+
+
+
+where:
+
+ is the observed count at time 
+ is the expected count
+ is the time index
+ represents the log-rate of change over time
+The log link function ensures that predicted counts remain positive.
+
+Sliding window approach
+
+The model is fitted on overlapping time windows of fixed length.
+This allows detection of local increases rather than a single global trend.
+Hypothesis testing
+
+For each window, the following hypotheses are tested:
+
+Null hypothesis:
+
+
+Alternative hypothesis:
+
+
+A window is considered significant if:
+
+ the chosen significance threshold
+Interpretation of the trend coefficient
+
+: exponential increase in expected counts
+: multiplicative change in the expected count per time unit
+Example:
+
+Output
+
+The method returns all time windows where a statistically significant increase in sentiment-related counts is detected, including:
+
+Window start and end times
+Estimated trend coefficient
+Associated p-value
+Limitations of this method
+
+Observations are probably no conditionally independent.
+Mean equals variance is probably not the case.
+A Negative Binomial GLM may be more appropriate but the problem is that the data is not sufficient to model it.
+
+So as a first approximation we will use Poisson GLM.
+
 
 {% include significant_increases_plot.html.html %}
 
-{% include t_sne_plot.html.html %}
+
 
 {% include top_negative_subreddits.html.html %}
 
