@@ -1,10 +1,16 @@
+---
+layout: post
+title: SPORTS - FIFA World Cup 2014
+subtitle: Case study for graph-based analysis
+cover-img: /assets/img/football_cover.jpg
+---
 
 # FIFA WORLD CUP 2014
 
 ![image-title-here](/assets/img/FIFA_WORLD_CUP.png){:class="img-responsive"}
 
 Space football is not very popular (_you can imagine why_) but, many people aournd you enjoy to gather together to watch old football games (_from the good old days..._). As you also really enjoy it and recently saw Germany-Argentina final, you decide to study this event.
-
+ 
 ## Event timespan and keywords
 You define the following timespan: 
 - **START** = 12th June 2014
