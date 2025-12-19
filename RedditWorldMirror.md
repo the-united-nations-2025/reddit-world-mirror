@@ -63,7 +63,7 @@ This summary shows us that conflict wasn't just random noise: it was driven by s
 
 **Mission Status**: We now have our tools and we know who the players are. Now, we can finally zoom out and look at the whole timeline to see if we can spot the moment Earth started to trend toward chaos. Let's start by a Bottom-Up analysis.
 
-# Bottom-up approach
+# BOTTOM-UP APPROACH
 
 #### 2.0 Overall evolution of hyperlink sentiment
 
@@ -312,7 +312,7 @@ Now, we can look at the significant time windows and extract the top active subr
 
 So, we now have tools to find meaningful timespan where conflicts emmerged during the **Great collapse**. We can now link this to the archives on the mothership, where we could find historical events to compare.
 
-# Top-down approach 
+# TOP-DOWN APPROACH
 
 The bottom-up approach gave us insights on the events timeline leading to the **Great Collapse**. You now remember that on the _mothership_, there are still ancient archives of **Earth History**.
 
@@ -673,4 +673,19 @@ Here you go, let’s travel back to an era when the digital world was at its mos
 
 **FIND THE 3 CASE STUDIES ON THE BOTTOM OF THE WEBPAGE**
 
+
+# CONCLUSION
+By combining bottom-up community-level analysis with top-down event-focused exploration, you ended your internship with some useful insights on how to reconstitute Earth history using some corrupted ancient data from Earth communities one century ago. 
+You finally reached the end of your internship. You wished you could have stayed longer in the *Earth History* Center to continue this thrilling analysis...
+*
+*
+*
+3 months later: *Notification Alert*
+*
+*
+*
+<details>
+<summary><b>Letter from the Center of Earth History: tap to open</b></summary>
+<p>Congratulations! You got accepted as a Data Analyst in the Center of Earth History.</p>
+</details>
 
