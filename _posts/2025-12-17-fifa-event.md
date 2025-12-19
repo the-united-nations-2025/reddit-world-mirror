@@ -6,9 +6,10 @@ cover-img: /assets/img/football_cover.png
 thumbnail-img: /assets/img/football_cover.png
 ---
 
+Space football is not very popular (_you can imagine why_) but, many people around you enjoy to gather together to watch old football games (_from the good old days..._). As you also really enjoy it and recently saw 2014 Germany-Argentina final, you decide to study this event.
+
 ![event_image](https://the-united-nations-2025.github.io/reddit-world-mirror/assets/img/FIFA_WORLD_CUP.png)
 
-Space football is not very popular (_you can imagine why_) but, many people around you enjoy to gather together to watch old football games (_from the good old days..._). As you also really enjoy it and recently saw 2014 Germany-Argentina final, you decide to study this event.
 
 ## Event timespan and select subreddits
 You define the following timespan: 

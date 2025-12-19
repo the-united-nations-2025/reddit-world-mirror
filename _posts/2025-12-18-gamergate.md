@@ -118,11 +118,10 @@ After taking a break in the low-gravity rooms to clear your minds, you decide to
 
 ---
 > 1. CLUSTER-FILTERED
-
 **Kruskal-Wallis test**  
 - H-stat: 368.319  
 - p-value: 1.05e-80  
-> At least two groups have different medians
+At least two groups have different medians
 
 **Post-hoc Dunn test**
 
@@ -135,11 +134,10 @@ After taking a break in the low-gravity rooms to clear your minds, you decide to
 ---
 
 > 2. KEYWORD-FILTERED
-
 **Kruskal-Wallis test**  
 - H-stat: 118.132  
 - p-value: 2.23e-26  
-> At least two groups have different medians
+At least two groups have different medians
 
 **Post-hoc Dunn test**
 
@@ -156,6 +154,6 @@ Kruskal Wallis test, followed by Dunn's posthoc test were performed and gave sta
 **Interpretation**:
 >The two subgraphs are less and less linked over the course of the event, which reveals no increase in interactions between the Gaming subreddits and their targets.
 
-***What can you conclude from this case study?***
+## ***What can you conclude from this case study?***
 >The Gamergate event is not perceptible in the Reddit dynamics, which is probably because the majority of the attacks happened in other social Networks (like Twitter) and Reddit only had follow-up waves not detected here.
 
