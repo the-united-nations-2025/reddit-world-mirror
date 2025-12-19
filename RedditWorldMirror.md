@@ -637,7 +637,7 @@ For the different event analysis, you compute different graphs:
 
 </details>
 <summary><b>Some important remarks</b></summary>
-<p>The graphs don't necessarily share the same subreddits, as some might have interactions in a given timespan and not after. Solution found! You combine all those graphs based on the common subreddits. The obtained graphs are very sparse,... but... it is quite normal and expected for a **real-world network**! You will only focus on the **giant connected component** (contains around 90% of the nodes). </p>
+<p>The graphs don't necessarily share the same subreddits, as some might have interactions in a given timespan and not after. Solution found! You combine all those graphs based on the common subreddits. The obtained graphs are very sparse,... but... it is quite normal and expected for a real-world network! You will only focus on the giant connected component (contains around 90% of the nodes). </p>
 </details>
 
 ### 2.2. Graph metrics
@@ -658,7 +658,7 @@ Here you compute the following metrics:
 | pagerank      |  Computed using an algorithm, score pages based on how likely a random walk would land on it         |  **Importance** measure: _a node connected to important subreddits is also more important_  |
 
 ### Time-analysis of graph metrics
-After all this setup, it is finally time to have fun. You found out about 3 events after a hard labour: 
+After all this setup, it is finally time to have fun. You found out about 3 events after a hard labour research: 
 
 - **Politics**: 2016 US Election
 - **Gaming / Social Justice**: 2014 Gamergate
