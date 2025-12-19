@@ -604,8 +604,8 @@ This may reveal **coordinated discussion hubs** and **communities shaping domina
 {% include ebola_keyword_topic_pairs.html %}
 
 ## 2. Graph-based analysis
-Suddenly, you have some reminiscences of what you learned from your lectures of *Data Analysis* during your long studies that helped you get this internship. *From the astronaut dream, you become a data analyser... but this is a long story for another time.*
-You focus again to the hyperlink network, which can actually, be represented as a graph! A graph-based analysis would allow you to explore the interactions between the graph's _nodes_ : the subreddits, source or target of the hyperlinks.
+Suddenly, you have some reminiscences of what you learned from your lectures of *Data Analysis* during your long studies that helped you get this internship. *From the astronaut dream, you became a data analyst! But this is a long story for another time.*
+You focus again on the hyperlink network, which can actually, be represented as a graph! A graph-based analysis would allow you to explore the interactions between the graph's _nodes_ : the subreddits, source or target of the hyperlinks.
 
 ![event_image](https://the-united-nations-2025.github.io/reddit-world-mirror/assets/img/graph_img.png)
 
@@ -629,12 +629,13 @@ Here, the hyperlink network can be computed as a directed graph because each hyp
 Fortunately, you can select some events and select only the hyperlinks occuring in the corresponding timespan, thus reducing the overall size of the graph. *You just avoided long hours of running your code*. 
 
 For the different event analysis, you compute different graphs:
-| Metric        | Description |
+
 |--------------|------------|
 | **graph_during** | Contains all the hyperlinks occurring during the event timespan that was defined (_example: 90 days - window_) |
 | **graph_before** | Contains all the hyperlinks occurring before the event, with the same timespan (_example: 90 days - window before the start of the event_) to allow for comparisons |
 | **graph_after**  | Contains all the hyperlinks occurring after the event, (_example: 90 days - window after the end of the event_) with the same timespan to allow for comparisons |
 
+</details>
 <summary><b>Some important remarks</b></summary>
 <p>The graphs don't necessarily share the same subreddits, as some might have interactions in a given timespan and not after. Solution found! You combine all those graphs based on the common subreddits. The obtained graphs are very sparse,... but... it is quite normal and expected for a **real-world network**! You will only focus on the **giant connected component** (contains around 90% of the nodes). </p>
 </details>
@@ -657,7 +658,7 @@ Here you compute the following metrics:
 | pagerank      |  Computed using an algorithm, score pages based on how likely a random walk would land on it         |  **Importance** measure: _a node connected to important subreddits is also more important_  |
 
 ### Time-analysis of graph metrics
-After all this setup, it is finally time to have fun. You found out about 3 events by different means and hard labour: 
+After all this setup, it is finally time to have fun. You found out about 3 events after a hard labour: 
 
 - **Politics**: 2016 US Election
 - **Gaming / Social Justice**: 2014 Gamergate
