@@ -64,6 +64,8 @@ This summary shows us that conflict wasn't just random noise: it was driven by s
 
 ## Bottom-up approach
 
+#### 2.0 Overall evolution of hyperlink sentiment
+
 Now that we have finished the tools and identified the main players, let's look at the big picture. The hard part start : putting it all on a timeline. You have millions of data points, so your first task is to calculate the Normalized Conflict Fraction every single month for the entire archive, so from 2014 to 2017 to see if we could spot the moment everything started to slide toward the Great Collapse.
 
 {% include proportion_negative_over_time.html %}
@@ -73,23 +75,17 @@ Look at that graph. If you were hoping for a clean, straight line that tells a s
 
 You have to refine your analysis. You can't analyze 55,000 subreddits one by one. A solution is to use **clustering**.
 
-#### Clustering
-You want to find clusters groups of subreddits that talked about the same topics. You can use the embedding vectors (the digital DNA) of the subreddits and ran the DBSCAN approach to define these clusters based on topics.
-
-<iframe src='https://flo.uri.sh/visualisation/26536290/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/26536290/?utm_source=embed&utm_campaign=visualisation/26536290' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
-
-This map  shows us the different topic groups: the Politics Cluster, the Gaming Cluster, the Neutral News Cluster, and so on. This proves the chaos is organized. 
-
+#### 2.1 Clustering
 
 Looking at individual subreddit is not that significant and it's quite difficult to interpret, as we could observe in the preliminary analysis.
 
-What should we do now ?
+**What should we do now ?**
 
 Maybe we should try another approach. What if we looked at the evolution of subreddits that have the same thematic ? Maybe for example, by looking at all the groups about politics, we can observe out of normal behaviours.
 
-But the majority of subreddits aren't very active, with very few posts in the span of 3 years. Taking all the subreddits might give us noisy results. We decided to arbitrarily choose the subreddits with a total post counts of at least 100 posts.
+But the majority of subreddits aren't very active, with very few posts in the span of 3 years. Taking all the subreddits might give us noisy results. We decided to arbitrarily choose the subreddits with a total post counts of at least **100 posts**.
 
-How are we going to group similar subreddits ? From the last remaining piece of information from earth great collapse, we found ancient representations of the said subreddit that they called embeddings. Maybe we can use that to our advantage: what if two similar subreddit had similar embeddings ?
+How are we going to group similar subreddits ? From the last remaining piece of information from earth great collapse, we found ancient representations of the said subreddit that they called **embeddings**. Maybe we can use that to our advantage: what if two similar subreddit had **similar embeddings** ?
 
 Using a technique called **clustering**, we can group vectors by how close they are to each other. **K-Means** is an unsupervised machine learning algorithm used to group data into K clusters based on similarity.
 
@@ -145,82 +141,76 @@ Secondly, we will apply a method known as the **DB Scan** to remove the outliers
 </ol>
 </details>
 
-We now have clusters of similar subreddits ! 
+We now have clusters of similar subreddits ! This map  shows us the different topic groups: the Politics Cluster, the Gaming Cluster, the Neutral News Cluster, and so on. This proves the chaos is organized. 
 
-#### T-SNE/PCA Plotting of clusters
+<iframe src='https://flo.uri.sh/visualisation/26536290/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/26536290/?utm_source=embed&utm_campaign=visualisation/26536290' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+
+#### 2.2 T-SNE/PCA Plotting of clusters
 
 Let's visually confirm that similar subreddits sit close to each other in the embedding space. But right now we have multidimensional vectors that are nos suited for plotting in 2d or 3d. We are going to use the **T-SNE and PCA dimension reduction method**.
 
-**PCA** is a linear dimensionality reduction technique that projects data onto a lower-dimensional space while maximizing variance.
+**PCA** is a linear dimensionality reduction technique that projects data onto a lower-dimensional space while **maximizing variance**.
 
 <details>
-  <summary><b>How PCA works</b></summary>
-  <p>
-    1. Center the data.
-    2. Compute the covariance matrix.
-    3. Extract eigenvectors (principal components).
-    4. Project data onto the top components with the largest eigenvalues.
-    
-    Key characteristics:
-    1. Linear method.
-    2. Preserves global structure and variance.
-    3. Components are orthogonal.
-    4. Sensitive to feature scaling.
-    5. Interpretable components.
-  </p>
+<summary><b>How PCA works</b></summary>
+<ol>
+<li>Center the data.</li>
+<li>Compute the covariance matrix.</li>
+<li>Extract eigenvectors (principal components).</li>
+<li>Project data onto the top components with the largest eigenvalues.</li>
+</ol>
+<b>Key characteristics:</b>
+<ol>
+<li>Linear method.</li>
+<li>Preserves global structure and variance.</li>
+<li>Components are orthogonal.</li>
+<li>Sensitive to feature scaling.</li>
+<li>Interpretable components.</li>
+</ol>
 </details>
 
 {% include pca_plot.html.html %}
 
-**t-SNE** is a non-linear dimensionality reduction method mainly used for visualizing high-dimensional data in 2D or 3D.
+**t-SNE** is a non-linear dimensionality reduction method mainly used for **visualizing high-dimensional data** in 2D or 3D.
 
 <details>
-  <summary><b>How t-SNE works</b></summary>
-  <p>
-    1. Convert pairwise distances into probabilities in high-dimensional space.
-    2. Do the same in low-dimensional space.
-    3. Minimize the difference between the two probability distributions.
-    
-    Key characteristics:
-    1. Preserves local neighborhood structure.
-    2. Reveals clusters clearly in visualizations.
-    3. Non-linear and non-parametric.
-    4. Computationally expensive.
-    5. Not suitable for preserving global distances or for downstream modeling.
-  </p>
+<summary><b>How t-SNE works</b></summary>
+<ol>
+<li>Convert pairwise distances into probabilities in high-dimensional space.</li>
+<li>Do the same in low-dimensional space.</li>
+<li>Minimize the difference between the two probability distributions.</li>
+</ol>
+<b>Key characteristics:</b>
+<ol>
+<li>Preserves local neighborhood structure.</li>
+<li>Reveals clusters clearly in visualizations.</li>
+<li>Non-linear and non-parametric.</li>
+<li>Computationally expensive.</li>
+<li>Not suitable for preserving global distances or for downstream modeling.</li>
+</ol>
 </details>
 
 {% include t_sne_plot.html.html %}
 
-<details>
-  <summary><b>Click here to see technical details about the DBSCAN settings</b></summary>
-  <p>
-    We used an epsilon value of 0.5 and a minimum of 10 samples. We found that this 
-    was the best way to get rid of the "noise" subreddits while keeping the 
-    main clusters like Politics and Gaming intact.
-  </p>
-</details>
-
 **Observations**:
 
-The PCA plot is less representative with no clear visual cluster of nodes.
+* The PCA plot is less representative with no clear visual cluster of nodes.
+* On the other hand, the T-SNE plot clearly shows clusters, corresponding to each cluster theme we found. It is important to note that the classification isn't perfect but shows interesting informations still.
 
-On the other hand, the T-SNE plot clearly shows clusters, corresponding to each cluster theme we found. It is important to note that the classification isn't perfect but shows interesting informations still.
 
+#### 2.3 Cluster neg/pos comments evolution analysis
+Now that we have our clusters, we can analyze the **trend evolution of negative or positive posts** for a given topic.
 
-#### Cluster neg/pos comments evolution analysis
-Now that we have our clusters, we can analyze the trend evolution of negative or positive posts for a given topic.
+This could be usefull if we want to identify a **significant event** related to a given topic (for example: a major politic event at time t might lead to a significant increase in the trend of the politic cluster.)
 
-This could be usefull if we want to identify a significant event related to a given topic (for example: a major politic event at time t might lead to a significant increase in the trend of the politic cluster.)
-
-But what is a significant increase ?
+But what is a **significant increase** ?
 
 We followed two methods:
 
 <details>
   <summary><b>1. Rolling Average</b></summary>
   <p>
-  Why ? Because the rolling average acts as a smoothed baseline, calculated using a defined window (you can define the wanted window as a parameter), which helps to visually identify deviations from the expected trend. When the post sentiment count falls above the rolling average, it suggests that the post sentiment count has increased relative to its typical trend. Here, a simple moving average was implemented as followed:
+  **Why** ? Because the rolling average acts as a smoothed baseline, calculated using a defined window (you can define the wanted window as a parameter), which helps to visually identify deviations from the expected trend. When the post sentiment count falls **above** the rolling average, it suggests that the post sentiment count has **increased** relative to its typical trend. Here, a simple moving average was implemented as followed:
 
  
 
@@ -240,23 +230,23 @@ where:
   <p>
   Let's assume our negative/positive follows a Poisson law. This is appropriate because:
 
-Counts of events are observed in a fixed unit of time, space, or sequence.
+Counts of events are observed in a **fixed unit of time, space, or sequence**.
 
 In your case, positive or negative counts are observed per time step.
 
-We assume events occur independently.
+We assume events occur **independently**.
 
 Each sentiment count at one time step is assumed not to directly affect counts at another time step, at least within the window.
 
-We assume the mean equals the variance (or approximately).
+We assume the **mean** equals the **variance** (or approximately).
 
 Poisson assumes that the expected count (λ) is equal to the variance of counts.
 
 Small deviations are acceptable, but large overdispersion may require a Negative Binomial model.
 
-We are going to take the count evolution on a sliding window of a given duration (ex: 3 months). In each time window, we will fit the counts to a Poisson Law and look at the increase or decrease.
+We are going to take the count evolution on a sliding window of a **given duration** (ex: 3 months). In each time window, we will fit the counts to a Poisson Law and look at the increase or decrease.
 
-This method uses a Generalized Linear Model (GLM) with a Poisson family to detect statistically significant increasing trends in count data over time.
+This method uses a **Generalized Linear Model (GLM) with a Poisson family** to detect **statistically significant increasing trends** in count data over time.
   </p>
 </details>
 
@@ -272,13 +262,13 @@ where:
  is the observed count at time 
  is the expected count
  is the time index
- represents the log-rate of change over time
-The log link function ensures that predicted counts remain positive.
+ represents the **log-rate of change** over time
+The **log link function** ensures that predicted counts remain positive.
 
 Sliding window approach
 
-The model is fitted on overlapping time windows of fixed length.
-This allows detection of local increases rather than a single global trend.
+The model is fitted on **overlapping time windows** of fixed length.
+This allows detection of **local increases** rather than a single global trend.
 Hypothesis testing
 
 For each window, the following hypotheses are tested:
@@ -300,7 +290,7 @@ Example:
 
 Output
 
-The method returns all time windows where a statistically significant increase in sentiment-related counts is detected, including:
+The method returns all time windows where a **statistically significant increase** in sentiment-related counts is detected, including:
 
 Window start and end times
 Estimated trend coefficient
@@ -309,21 +299,78 @@ Limitations of this method
 
 Observations are probably no conditionally independent.
 Mean equals variance is probably not the case.
-A Negative Binomial GLM may be more appropriate but the problem is that the data is not sufficient to model it.
+A **Negative Binomial GLM** may be more appropriate but the problem is that the data is not sufficient to model it.
 
-So as a first approximation we will use Poisson GLM.
+So as a first approximation we will use **Poisson GLM**.
 
 
 {% include significant_increases_plot.html.html %}
 
+**Observations**:
 
+* We can ignore the _first significant time window_ as it is just due to the start of the counts (mismatch between the starting date of the plot and the starting date of the counts).
+* The _significant time windows_ seem to follow the time windows where the counts are above the rolling average in a sufficient manner.
+
+**Conclusions**:
+
+* From our observations, we could form the hypotethis that, in the significant time windows, major world events happened at the global political scale, leading to the **potential time windows of the collapse of society** !
+* These observations do not give us any informations on the groups involved nor the matter of the event.
+
+#### 2.4 Individual subreddit contribution
+Now, we can look at the significant time windows and extract the top active subreddits of the cluster ! This could give us an insight on who's been contributing the most to the negative increase.
 
 {% include top_negative_subreddits.html.html %}
 
-
-So, we now have tools to find meaningful timespan where conflicts emmerged during the **Great collapse**. We can now link this to the archives on the mothership, where we could find historical events to compare...
+So, we now have tools to find meaningful timespan where conflicts emmerged during the **Great collapse**. We can now link this to the archives on the mothership, where we could find historical events to compare.
 
 ## Top-down approach 
+
+The bottom-up approach gave us insights on the events timeline leading to the **Great Collapse**. You now remember that on the _mothership_, there are still ancient archives of **Earth History**.
+
+You decide to go look through them, to maybe find significant events that we might relate to our analysis. After long nights under the dim lights of the archives, and after sacrifying your mental sanity, you manage to find significant events that you would consider as _potential disasters_.
+
+#### 2.1 Studying negative hyperlinks
+Analysis 1 and 3 aim to study which subreddists have increased their activity the most in a concrete timespan that is related to the ocurrence of a main world event. The objective is to see whether the most active subreddits are or not related with the event. The difference is that on analysis 3 this is performed by filtering in keywords related to the event.
+
+Analysis 2 and 4 aim to study which pairs of subreddits are more active in a timespan related to the main world event. As before, on analysis 4 this is performed filtering by keywords related to the event.
+
+##### 2.1.a 1st analysis performed:
+Study which subreddits have increased the most their activity in a timespan related to the main word event. Therefore, we can observe if the subreddits that have increased their activity the most are or not related to the main world event. We obtain this information by the name of the subreddits.
+_(We adjust the three window lengths according to the event impact or event characteristics.)_
+
+**USA elections**:
+
+Here it has been ploted top 15 subreddits that have increased their activity the most in 3 different timespans:
+* 15 days before and after the Election day
+* 30 days before and after the Election day
+* 120 days before and after the Election day
+
+{% include USA_elections.html-2.html %}
+
+A notable pattern emerges around the 2016 US presidential election. In the ±15 days window, politically related subreddits such as enoughtrumpspam, the_donald, and political_revolution appear among those with the largest increases in negative activity.
+As the time window expands to ±30 days, several of these communities remain prominent, including enoughtrumpspam, political_revolution, and shitpoliticssays. In the ±120 days window, election-related subreddits such as the_donald and bannedfromthe_donald continue to appear.
+
+This observation suggests a relationship between the US presidential election and increased activity in politically related subreddits, as reflected in the animation.
+
+**Brexit Referendum**:
+
+Here it has been ploted top 15 subreddits that have increased their activity the most in 3 different timespans:
+* 5 days before and after the Brexit referendum day
+* 15 days before and after the Brexit referendum day
+* 30 days before and after the Brexit referendum day
+
+{% include brexit.html-2.html %}
+
+In the Brexit related graph, we do not observe subreddits whose names are directly tied to the event itself. However, several broader political or ideological, such as shitliberalsay appear among those with increased negative activity.
+As the time window expands to ±15 days and ±30 days, shitliberalsay remains visible among the active subreddits. This suggests that, during the Brexit period, broader political and ideological discussion communities became more active, even if they were not explicitly named after the event.
+
+**Paris terrorist attack**:
+
+Here it has been ploted top 15 subreddits that have increased their activity the most in 3 different timespans:
+* 5 days before and after the Paris terrorist attack
+* 15 days before and after the Paris terrorist attack
+* 30 days before and after the Paris terrorist attack
+
 
 Mission Goal: Indentify specific known world events from the data ...
 
