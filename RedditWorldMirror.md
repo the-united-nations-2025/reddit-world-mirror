@@ -63,7 +63,7 @@ This summary shows us that conflict wasn't just random noise: it was driven by s
 
 **Mission Status**: We now have our tools and we know who the players are. Now, we can finally zoom out and look at the whole timeline to see if we can spot the moment Earth started to trend toward chaos. Let's start by a Bottom-Up analysis.
 
-## Bottom-up approach
+# Bottom-up approach
 
 #### 2.0 Overall evolution of hyperlink sentiment
 
@@ -312,11 +312,13 @@ Now, we can look at the significant time windows and extract the top active subr
 
 So, we now have tools to find meaningful timespan where conflicts emmerged during the **Great collapse**. We can now link this to the archives on the mothership, where we could find historical events to compare.
 
-## Top-down approach 
+# Top-down approach 
 
 The bottom-up approach gave us insights on the events timeline leading to the **Great Collapse**. You now remember that on the _mothership_, there are still ancient archives of **Earth History**.
 
 You decide to go look through them, to maybe find significant events that we might relate to our analysis. After long nights under the dim lights of the archives, and after sacrifying your mental sanity, you manage to find significant events that you would consider as _potential disasters_.
+
+## 1. Activity-based analysis
 
 #### 2.1 Studying negative hyperlinks
 Analysis 1 and 3 aim to study which subreddists have increased their activity the most in a concrete timespan that is related to the ocurrence of a main world event. The objective is to see whether the most active subreddits are or not related with the event. The difference is that on analysis 3 this is performed by filtering in keywords related to the event.
@@ -600,5 +602,74 @@ This may reveal **coordinated discussion hubs** and **communities shaping domina
 
 #### Ebola outbreak
 {% include ebola_keyword_topic_pairs.html %}
+
+## 2. Graph-based analysis
+Suddenly, you have some reminiscences of what you learned from your lectures of *Data Analysis* during your long studies that helped you get this internship. *From the astronaut dream, you become a data analyser... but this is a long story for another time.*
+You focus again to the hyperlink network, which can actually, be represented as a graph! A graph-based analysis would allow you to explore the interactions between the graph's _nodes_ : the subreddits, source or target of the hyperlinks.
+
+![event_image](https://the-united-nations-2025.github.io/reddit-world-mirror/assets/img/graph_img.png)
+
+### 2.1. Graph creation
+<details>
+<summary><b>Graph creation library</b></summary>
+<p>Given the high dimension of our hyperlink network, you use the graph processing library iGraph to create the graph and extract meaningful information, such as node's importance.</p>
+</details>
+
+**Directed graph**:
+Here, the hyperlink network can be computed as a directed graph because each hyperlink has both a source and a target subreddit, associated with some attributes:
+
+|-------------|------------|
+| **weight**     | Number of occurrences of this interaction |
+| **weight_pos** | Number of occurrences of this interaction that display a positive sentiment (_LINK_SENTIMENT_ = 1) |
+| **weight_neg** | Number of occurrences of this interaction that display a negative sentiment (_LINK_SENTIMENT_ = -1) |
+
+---
+
+**Reduced graph size**:
+Fortunately, you can select some events and select only the hyperlinks occuring in the corresponding timespan, thus reducing the overall size of the graph. *You just avoided long hours of running your code*. 
+
+For the different event analysis, you compute different graphs:
+| Metric        | Description |
+|--------------|------------|
+| **graph_during** | Contains all the hyperlinks occurring during the event timespan that was defined (_example: 90 days - window_) |
+| **graph_before** | Contains all the hyperlinks occurring before the event, with the same timespan (_example: 90 days - window before the start of the event_) to allow for comparisons |
+| **graph_after**  | Contains all the hyperlinks occurring after the event, (_example: 90 days - window after the end of the event_) with the same timespan to allow for comparisons |
+
+<summary><b>Some important remarks</b></summary>
+<p>The graphs don't necessarily share the same subreddits, as some might have interactions in a given timespan and not after. Solution found! You combine all those graphs based on the common subreddits. The obtained graphs are very sparse,... but... it is quite normal and expected for a **real-world network**! You will only focus on the **giant connected component** (contains around 90% of the nodes). </p>
+</details>
+
+### 2.2. Graph metrics
+
+**What can you extract from this messy web?**
+To analyse a graph, you can compute different metrics to assess the importance of the subreddits in the graph (as _nodes_) both on a local scale considering their neighboring interactions, and on a global scale, considering its importance on the overall network structure.
+Here you compute the following metrics:
+
+| Metric            | Computation | Meaning |
+| :---------------- | :------: | :----: |
+| in_degree         |   Number of hyperlink **received** | **Popularity** measure: _how many subreddits talks about this one?_      |
+| out_degree        |   Number of hyperlink **sent**     | **Activity measure**: _how many subreddits are reached from this one?_   |
+| total_degree      |  in_degree + out_degree            | **Interaction** measure: _how many neighbors in the graph?_             |
+| degree_centrality |  total_degree normalized to the total of possible connections   | **Interaction** measure: _how many neighbors in the graph?_ |
+| closeness_in      | inverse of the shortest paths lengths from other nodes to this one | **Centrality measure** : _how easily is this subreddit reachable?_|
+| closeness_out      | inverse of the shortest paths lengths from this node to the others | **Centrality measure** : _how easily do we reach other subreddits from this one?_|
+| betweenness      |     Based on the number of shortest paths on the network that pass through this node         | **Cluster connection** measure: _does this node acts as a bridge between different clusters?_ |
+| pagerank      |  Computed using an algorithm, score pages based on how likely a random walk would land on it         |  **Importance** measure: _a node connected to important subreddits is also more important_  |
+
+### Time-analysis of graph metrics
+After all this setup, it is finally time to have fun. You found out about 3 events by different means and hard labour: 
+
+- **Politics**: 2016 US Election
+- **Gaming / Social Justice**: 2014 Gamergate
+- **Sports**: 2014 FIFA World Cup
+
+For each event, you compare the dynamics between:
+- **The overall graph**
+- **Subreddits selected from the corresponding cluster**: _example: subreddits in the graph that are within the Politics cluster_ -> those subreddits might not be perfectly linked with the subject, as it is a broader approach and they cluster based on similar users activity
+- **Subreddits selected using keywords (=_Topic-linked subreddits_)** : _example: subreddits that contain the keyword donald_ this selection allows us to refine your analysis to directly topic-linked subreddits.
+
+Here you go, let’s travel back to an era when the digital world was at its most lively (and most conflicted...)! 
+
+**FIND THE 3 CASE STUDIES ON THE BOTTOM OF THE WEBPAGE**
 
 

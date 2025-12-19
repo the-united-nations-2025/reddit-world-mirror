@@ -13,8 +13,8 @@ In the archives of the spaceship you dug out some interesting old papers, all ta
 ## Event timespan and select subreddits
 To take into account the election campaign that takes place before the official election day, you define a timespan of 3 months covering the campaign, the election day, and the following days where reactions on the election can occur:
 
-    - **START** = 7th September 2016
-    - **END** = 7th December 2016
+    * **START** = 7th September 2016
+    * **END** = 7th December 2016
 
 Before analyzing, you need to filter the subreddits in the graph to select the ones found in the 'Politics' cluster or more specifically, containing the following keywords of the event:
 <iframe src='https://flo.uri.sh/story/3516127/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
