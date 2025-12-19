@@ -635,7 +635,7 @@ For the different event analysis, you compute different graphs:
 | **graph_before** | Contains all the hyperlinks occurring before the event, with the same timespan (_example: 90 days - window before the start of the event_) to allow for comparisons |
 | **graph_after**  | Contains all the hyperlinks occurring after the event, (_example: 90 days - window after the end of the event_) with the same timespan to allow for comparisons |
 
-</details>
+<details>
 <summary><b>Some important remarks</b></summary>
 <p>The graphs don't necessarily share the same subreddits, as some might have interactions in a given timespan and not after. Solution found! You combine all those graphs based on the common subreddits. The obtained graphs are very sparse,... but... it is quite normal and expected for a real-world network! You will only focus on the giant connected component (contains around 90% of the nodes). </p>
 </details>
@@ -677,13 +677,21 @@ Here you go, let’s travel back to an era when the digital world was at its mos
 # CONCLUSION
 By combining bottom-up community-level analysis with top-down event-focused exploration, you ended your internship with some useful insights on how to reconstitute Earth history using some corrupted ancient data from Earth communities one century ago. 
 You finally reached the end of your internship. You wished you could have stayed longer in the *Earth History* Center to continue this thrilling analysis...
+
 *
+
 *
+
 *
+
 3 months later: *Notification Alert*
+
 *
+
 *
+
 *
+
 <details>
 <summary><b>Letter from the Center of Earth History: tap to open</b></summary>
 <p>Congratulations! You got accepted as a Data Analyst in the Center of Earth History.</p>
