@@ -2,15 +2,16 @@
 
 #### _[January 2nd 2174]_
 
-You know the history books, but they are mostly blank pages. The world we are trying to study, _Earth_, was fine until the **Global Conflict of 2080** happened. That massive war totally destroyed the planet, made it completely unviable, and forced all surviving civilization to pack up and leave in huge spacecraft vessels. Nothing from this ancient, moderned and highly developed civilization, called Humans, survived the disaster.
+_You know the history books, but they are mostly blank pages. The world we are trying to study, _Earth_, was fine until the **Global Conflict of 2080** happened. That massive war totally destroyed the planet, made it completely unviable, and forced all surviving civilization to pack up and leave in huge spacecraft vessels. Nothing from this ancient, moderned and highly developed civilization, called Humans, survived the disaster.
 
-So now, here we are in 2174, and we still have a big hole in our understanding of what actually led up to that collapse, and more generally of the life of this civilization in Earth almost 100 years ago. That's where you come in.
+So now, here we are in **2174**, and we still have a big hole in our understanding of what actually led up to that collapse, and more generally of the life of this civilization in Earth almost 100 years ago. That's where you come in.
 
 As an **Intern in Earth History**, you have been designated to participate to the huge project to reconstruct Earth’s past. Your specific mission is to **reconstruct the history of the volatile 2014–2017 era**. You need to figure out how that advanced society broke down.
 
 The main **Research Questions** you need to tackle are the following:
 1. Can world events in times of crisis be reflected in the sentiment evolution of subreddits interactions?
-2. Can world events affect the dynamics of subreddits interactions?
+2. Can world events affect the dynamics of subreddits interactions?_
+<br>
 
 # Preliminary Analysis
 
