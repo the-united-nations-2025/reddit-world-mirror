@@ -229,13 +229,13 @@ We followed two methods:
 
 <details>
   <summary><b>2. Poisson distribution</b></summary>
-  <div markdown="1" style="margin-top: 10px; padding-left: 20px;">
-    Let's assume our negative/positive follows a Poisson law. This is appropriate because:
+  <div style="margin-top: 10px;">
+    <p>Let's assume our negative/positive follows a Poisson law. This is appropriate because:</p>
 
-    * Counts of events are observed in a <b>fixed unit of time, space, or sequence</b>: In your case, positive or negative counts are observed per time step.
-    * We assume events occur <b>independently</b>: Each sentiment count at one time step is assumed not to directly affect counts at another time step, at least within the window.
-    * We assume the <b>mean</b> equals the <b>variance</b> (or approximately): Poisson assumes that the expected count ($\lambda$) is equal to the variance of counts.
-    * Small deviations are acceptable, but large overdispersion may require a Negative Binomial model.
+    </p>* Counts of events are observed in a <b>fixed unit of time, space, or sequence</b>: In your case, positive or negative counts are observed per time step.</p>
+    </p>* We assume events occur <b>independently</b>: Each sentiment count at one time step is assumed not to directly affect counts at another time step, at least within the window.</p>
+    </p>* We assume the <b>mean</b> equals the <b>variance</b> (or approximately): Poisson assumes that the expected count ($\lambda$) is equal to the variance of counts.</p>
+    </p>* Small deviations are acceptable, but large overdispersion may require a Negative Binomial model.</p>
   </div>
 </details>
 
@@ -245,51 +245,49 @@ This method uses a **Generalized Linear Model (GLM) with a Poisson family** to d
 
 <details>
   <summary><b>3. Poisson GLM Model Formulation</b></summary>
-  <div markdown="1" style="margin-top: 10px; padding-left: 20px;">
+  <div style="margin-top: 10px;">
 
-### Model Formulation
+    1. Model Formulation
 
-For each sliding time window, the following model is fitted:
+    For each sliding time window, the following model is fitted:
 
-$$y_t \sim \text{Poisson}(\lambda_t)$$
-$$\log(\lambda_t) = \beta_0 + \beta_1 t$$
+    $$y_t \sim \text{Poisson}(\lambda_t)$$
+    $$\log(\lambda_t) = \beta_0 + \beta_1 t$$
 
-where:
-* $y_t$: is the observed count at time $t$
-* $\lambda_t$: is the expected count
-* $t$: is the time index
-* $\beta_1$: represents the **log-rate of change** over time
+    where:
+    * $y_t$: is the observed count at time $t$
+    * $\lambda_t$: is the expected count
+    * $t$: is the time index
+    * $\beta_1$: represents the **log-rate of change** over time
 
-The **log link function** ensures that predicted counts remain positive.
+    The **log link function** ensures that predicted counts remain positive.
 
-### Sliding window approach
-The model is fitted on **overlapping time windows** of fixed length. This allows detection of **local increases** rather than a single global trend.
+    2. Sliding window approach
+    The model is fitted on **overlapping time windows** of fixed length. This allows detection of **local increases** rather than a single global trend.
 
-### Hypothesis testing
-For each window, the following hypotheses are tested:
-* Null hypothesis: $H_0: \beta_1 \le 0$
-* Alternative hypothesis: $H_1: \beta_1 > 0$
+    3. Hypothesis testing
+    For each window, the following hypotheses are tested:
+    * Null hypothesis: $H_0: \beta_1 \le 0$
+    * Alternative hypothesis: $H_1: \beta_1 > 0$
 
-A window is considered significant if: $p\text{-value} < \alpha$ (the chosen significance threshold).
+    A window is considered significant if: $p\text{-value} < \alpha$ (the chosen significance threshold).
 
-### Interpretation of the trend coefficient
-* $\beta_1 > 0$: exponential increase in expected counts.
-* $e^{\beta_1}$: multiplicative change in the expected count per time unit (e.g., $e^{\beta_1} = 1.05 \rightarrow 5\%$ increase per time unit).
+    4. Interpretation of the trend coefficient
+    * $\beta_1 > 0$: exponential increase in expected counts.
+    * $e^{\beta_1}$: multiplicative change in the expected count per time unit (e.g., $e^{\beta_1} = 1.05 \rightarrow 5\%$ increase per time unit).
 
-### Output
-The method returns all time windows where a **statistically significant increase** in sentiment-related counts is detected, including:
-* Window start and end times
-* Estimated trend coefficient ($\beta_1$)
-* Associated p-value
+    5. Output
+    The method returns all time windows where a **statistically significant increase** in sentiment-related counts is detected, including:
+    * Window start and end times
+    * Estimated trend coefficient ($\beta_1$)
+    * Associated p-value
 
-### Limitations of this method
-* Observations are probably not conditionally independent.
-* Mean equals variance is probably not the case (overdispersion).
-* A **Negative Binomial GLM** may be more appropriate, but the data volume is often insufficient to model it reliably. So, as a first approximation, we use a **Poisson GLM**.
-
+    6. Limitations of this method
+    * Observations are probably not conditionally independent.
+    * Mean equals variance is probably not the case (overdispersion).
+    * A **Negative Binomial GLM** may be more appropriate, but the data volume is often insufficient to model it reliably. So, as a first approximation, we use a **Poisson GLM**.
   </div>
 </details>
-
 
 A **Negative Binomial GLM** may be more appropriate but the problem is that the data is not sufficient to model it.
 
