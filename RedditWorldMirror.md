@@ -12,6 +12,7 @@ The main **Research Questions** you need to tackle are the following:
 1. Can world events in times of crisis be reflected in the sentiment evolution of subreddits interactions?
 2. Can world events affect the dynamics of subreddits interactions?
 
+# Preliminary Analysis
 
 ### The Archive: The Single Surviving Fragment
 
@@ -60,7 +61,7 @@ To make it even clearer, we summarized the data to see the "Net Aggression." We 
 
 This summary shows us that conflict wasn't just random noise: it was driven by specific cnetral nodes. Why this matters for your mission: Identifying these central nodes tells us who held the power and who caused the friction. If we’re going to understand how this society broke down, we have to follow the people who were starting the most fires.
 
-**Mission Status**: We now have our tools and we know who the players are. Now, we can finally zoom out and look at the whole timeline to see if we can spot the moment Earth started to trend toward chaos. Let's start the Bottom-Up analysis by looking at the timeline.
+**Mission Status**: We now have our tools and we know who the players are. Now, we can finally zoom out and look at the whole timeline to see if we can spot the moment Earth started to trend toward chaos. Let's start by a Bottom-Up analysis.
 
 ## Bottom-up approach
 
@@ -141,13 +142,15 @@ Secondly, we will apply a method known as the **DB Scan** to remove the outliers
 </ol>
 </details>
 
-We now have clusters of similar subreddits ! This map  shows us the different topic groups: the Politics Cluster, the Gaming Cluster, the Neutral News Cluster, and so on. This proves the chaos is organized. 
+We now have clusters of similar subreddits ! The question is now: What are their themes ? We could do it ourselves but fortunately our spaceship comes with an **LLM** supercomputer than we can run localy. We feed it a prompt asking for reccurent theme of the list of subreddits of each clusters. Then, we do some manual re-labeling to have more meaningfull topic names and regroup potential similar topics. And finally we merge with the counts per reddit to have the full dataframe, used later in the analysis. This process isn't perfect and some manual labeling adjustments had to be made but this basicaly gives us our main topics !
 
 <iframe src='https://flo.uri.sh/visualisation/26536290/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/26536290/?utm_source=embed&utm_campaign=visualisation/26536290' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 
+The map above shows us the different topic groups: the Politics Cluster, the Gaming Cluster, the Neutral News Cluster, and so on. This proves the chaos is organized. 
+
 #### 2.2 T-SNE/PCA Plotting of clusters
 
-Let's visually confirm that similar subreddits sit close to each other in the embedding space. But right now we have multidimensional vectors that are nos suited for plotting in 2d or 3d. We are going to use the **T-SNE and PCA dimension reduction method**.
+Let's now visually confirm that similar subreddits sit close to each other in the embedding space. But right now we have multidimensional vectors that are nos suited for plotting in 2d or 3d. We are going to use the **T-SNE and PCA dimension reduction method**.
 
 **PCA** is a linear dimensionality reduction technique that projects data onto a lower-dimensional space while **maximizing variance**.
 
@@ -198,7 +201,7 @@ Let's visually confirm that similar subreddits sit close to each other in the em
 * On the other hand, the T-SNE plot clearly shows clusters, corresponding to each cluster theme we found. It is important to note that the classification isn't perfect but shows interesting informations still.
 
 
-#### 2.3 Cluster neg/pos comments evolution analysis
+#### 2.3 Cluster negative and positive comments evolution analysis
 Now that we have our clusters, we can analyze the **trend evolution of negative or positive posts** for a given topic.
 
 This could be usefull if we want to identify a **significant event** related to a given topic (for example: a major politic event at time t might lead to a significant increase in the trend of the politic cluster.)
@@ -211,16 +214,11 @@ We followed two methods:
   <summary><b>1. Rolling Average</b></summary>
   <p>
   **Why** ? Because the rolling average acts as a smoothed baseline, calculated using a defined window (you can define the wanted window as a parameter), which helps to visually identify deviations from the expected trend. When the post sentiment count falls **above** the rolling average, it suggests that the post sentiment count has **increased** relative to its typical trend. Here, a simple moving average was implemented as followed:
-
- 
-
-where:
-
-: count at time t
-
-: window size (number of points in the average)
-
-: average of the current and previous  counts
+  $$\text{RollingAvg}_t = \frac{1}{w} \sum_{i=0}^{w-1} x_{t-i}$$
+  where:
+  - $x_t$: count at time t
+  - $w$: window size (number of points in the average)
+  - $\\text{RollingAvg}_t$: average of the current and previous  counts
   </p>
 </details>
 
@@ -486,20 +484,6 @@ The top-down analysis examines whether major real-world events are reflected in 
 Overall, the results indicate that major real world events are reflected in negative interactions between Reddit communities in different ways and with varying intensity. Highly polarizing and discussion driven events, such as the US presidential election, generate clear and concentrated patterns of negative interactions. Political events such as the Brexit referendum show limited evidence of negative interaction patterns, which are considerably weaker and more dispersed than those observed during the US presidential election. In comparison, sudden or external crises, such as terrorist attacks or disease outbreaks, tend to produce more limited and less structured responses at the subreddit interaction level.
 
 
-
-
-
-Mission Goal: Indentify specific known world events from the data ...
-
-Now, we switch our approach. Instead of looking at the whole archive first, we use the little bit of corrupted external data we have to target specific event dates. We can choose between two major kinds of shocks to see if the network behavior matches:
-* Anticipation of Political Shock: Look for slow builds (like elections) where the tension might have peaked before the event
-* Acute Shocks: Look for sudden events (like attacks) where you should see an immediate and rapid response
-
-_INTERACTIVE ELEMENT: SELECT AN EVENT_
-
-You can now select any event from the archive to test the system ...
-
-{% include Gaming_neg.html %}
 
 
 ## A Top-Down Reconstruction
