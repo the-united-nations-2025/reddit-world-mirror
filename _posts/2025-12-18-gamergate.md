@@ -27,9 +27,12 @@ First, you focus on the **gaming** community, thought to be the source of the at
 *NB: Both filtering methods lead to more than 100 subreddits in each case, making CCDF plots and statistical tests reliable for analysis.*
 
 <iframe src='https://flo.uri.sh/story/3516066/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
-
-
-
+<details>
+<summary><b>Number of subreddits in each selection</b></summary>
+<p>Number of common subreddits in the graphs: 3270 
+Number of subreddits linked to the Gaming cluster: 146 
+Number of subreddits directly linked with the topic: 127</p>
+</details>
 
 **Expectations**:
 The interesting metric to study for the gaming community is the proportion of negative links (***out_neg_prop***) coming out of the nodes from the subgraph. *Gaming subreddits are attacking other subreddits!*
@@ -80,7 +83,12 @@ Let's shift our perspective and study the targeted communities, linked to femini
 * **Target subreddits**: the topic-linked subreddits are selected using keywords related to feminism and journalism, thought to be the target of the attacks. The broad linked cluster is therefore *Social Justice*.
 
 <iframe src='https://flo.uri.sh/story/3516063/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
-
+<details>
+<summary><b>Number of subreddits in each selection</b></summary>
+<p>Number of common subreddits in the graphs: 1226 
+Number of subreddits linked to the Social justice cluster: 139 
+Number of subreddits directly linked with the topic: 7</p>
+</details>
 
 **Expectations**:
 The interesting metrics here are both the **proportion of negative hyperlinks of received and sent**: indeed, the targeted communities can be attacked but also respond back to this attack!

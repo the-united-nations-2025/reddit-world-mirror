@@ -18,6 +18,12 @@ You define the following timespan:
 
 You will filter subreddits that belong to the _Sports_ cluster, and then select the following keywords to filter topic-linked subreddits (more specific!):
 <iframe src='https://flo.uri.sh/story/3515949/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+<details>
+<summary><b>Number of subreddits in each selection</b></summary>
+<p>Number of common subreddits in the graphs: 1226 
+Number of subreddits linked to the  Sports cluster: 52 
+Number of subreddits directly linked with the topic: 7</p>
+</details>
 
 ## Time analysis of node metrics
 **Expectations**:
