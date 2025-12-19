@@ -2,8 +2,8 @@
 layout: post
 title: POLITICS - US Presidential Election 2016
 subtitle: Case study for graph-based analysis
-cover-img: /assets/img/US_ELECTION.png
-thumbnail-img: /assets/img/US_ELECTION.png
+cover-img: /assets/img/us_cover.png
+thumbnail-img: /assets/img/us_cover.png
 ---
 In the archives of the spaceship you dug out some interesting old papers, all talking about political events from the early 200s. A nugget of gold for your analysis! A newspaper from 2016 attract your attention, let's see what it is talking about...
 
@@ -12,6 +12,7 @@ In the archives of the spaceship you dug out some interesting old papers, all ta
 
 ## Event timespan and select subreddits
 To take into account the election campaign that takes place before the official election day, you define a timespan of 3 months covering the campaign, the election day, and the following days where reactions on the election can occur:
+
     - **START** = 7th September 2016
     - **END** = 7th December 2016
 
