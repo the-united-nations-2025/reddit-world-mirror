@@ -512,6 +512,30 @@ These interactions are primarily initiated by the *`engineeredattacks`* subreddi
 For the Ebola outbreak, consistent with the earlier keyword-based negative activity analysis, no clear interaction pattern between subreddits is observed.
 The keyword-filtered pair-level analysis reveals only a single negative interaction, indicating that, within this time window, the subreddits captured by the keyword filtering do not exhibit a noticeable increase in negative interactions.
 
+### Significance of time windows
+New message from your mentor:
+```
+MISSION GOAL (another one!):
+Could you link this approach with the bottom-up analysis?
+It could be nice to verify that the significant timeframes you found in the bottom-up correspond to some meaningful events!
+```
+You decide to target first the "Politics" and "Social Justice" clusters. Your base hypothethis would be that those two themes correspond the most to your previous events.
+
+These events will be used to test our hypothethis of the significant timeframes from the bottom-up analysis.
+
+
+![event_image](https://the-united-nations-2025.github.io/reddit-world-mirror/assets/img/sentiment_evol_social_justice_w_events.png)
+
+![event_image](https://the-united-nations-2025.github.io/reddit-world-mirror/assets/img/sentiment_evol_politics_w_events.png)
+
+
+Overall, the events fall into a significant timespan. It makes sense that the Brexit Referendum falls more in the Politics topic and that we see a significant increase for this event.
+
+On the other hand, there are significant increases during the USA election and the Paris attack in the Social Justice topic. These are subjects more controvertial, with people giving their opinion on social matters related to those topics.
+
+> In conlusion, some significant timespan do correspond to events that you defined as meaningful!
+
+But be careful... you can't be sure at 100% that those two facts are indeed correlated.
 
 #### Conclusion
 MISSION GOALS DONE! This **top-down analysis based on subreddits activities** examines whether major real-world events are reflected in changes in negative hyperlink interactions between Reddit communities. By focusing on well known global events and analyzing subreddit interactions before and after their occurrence, this approach allows us to assess whether such events leave detectable traces in online community behavior.
