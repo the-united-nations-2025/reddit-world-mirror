@@ -523,9 +523,8 @@ You decide to target first the "Politics" and "Social Justice" clusters. Your ba
 
 These events will be used to test our hypothethis of the significant timeframes from the bottom-up analysis.
 
-![event_image](https://the-united-nations-2025.github.io/reddit-world-mirror/assets/img/sentiment_evol_social_justice_w_events.png)
-
-![event_image](https://the-united-nations-2025.github.io/reddit-world-mirror/assets/img/sentiment_evol_politics_w_events.png)
+{% include sentiment_evol_social_justice_w_events.html.html %}
+{% include sentiment_evol_politics_w_events.html %}
 
 Overall, the events fall into a significant timespan. It makes sense that the Brexit Referendum falls more in the Politics topic and that we see a significant increase for this event.
 
