@@ -41,33 +41,33 @@ That chart right there is our proof! It shows exactly which language drives the 
 
 This confirms that the data is viable for reconstructing the history of the 2014–2017 era as we can actually "read" the emotion of a dead civilization.
 
-Now that we know _what_ language drove the sentiment, we need to know _who_ the main players were. If we want to understand the chaos of 2014–2017, we cannot treat the entire network the same way. We need to identify the "hotspots": the communities that were most likely to start a digital fight, and the ones that were constantly getting attacked. 
+Now that you know _what_ language drove the sentiment, you need to know _who_ the main players were. If we want to understand the chaos of 2014–2017, we cannot treat the entire network the same way. We need to identify the "hotspots": the communities that were most likely to start a digital fight, and the ones that were constantly getting attacked. 
 
-We track every single negative link (LINK_SENTIMENT = -1) to find the source and the target. To do this, we split the conflict into two sides: the Instigators (the ones starting the fights) and the Targets (the ones getting called out). Check out what the data showed us:
+You track every single negative link (LINK_SENTIMENT = -1) to find the source and the target. To do this, you split the conflict into two sides: the Instigators (the ones starting the fights) and the Targets (the ones getting called out). Check out what the data showed us:
 
 {% include subreddits_receiving_starting.html %}
 
 ###### The Instigators (The Attackers)
 
-First, we tracked which communities were the most aggressive. We looked at the "Source" of every negative link to see who was reaching out to start trouble. This is the Red List. These are the top subreddits that initiated the most conflict links. Weirdly enough, you will see names like r/subredditdrama right at the top. It makes sense as their whole purpose was to find and talk about fights happening elsewhere. By looking at this, we can identify which "tribes" were the most active in pushing the network toward a breaking point.
+First, you tracked which communities were the most aggressive. You looked at the "Source" of every negative link to see who was reaching out to start trouble. This is the Red List. These are the top subreddits that initiated the most conflict links. Weirdly enough, you will see names like r/subredditdrama right at the top. It makes sense as their whole purpose was to find and talk about fights happening elsewhere. By looking at this, we can identify which "tribes" were the most active in pushing the network toward a breaking point.
 
 ###### The Targets (The Victims)
 
-But a fight has two sides. We also had to look at the "Targets", so the communities that were constantly being linked to in a negative way. This is the Blue List. These are the communities that were most frequently targeted by others. Some of these are huge, like r/askreddit, which just gets a lot of links because it’s so big. But others are much more specific. You can see communities that were clearly "villains" in the eyes of the rest of the network, getting hammered with negative links from all over the place.
+But a fight has two sides. You also had to look at the "Targets", so the communities that were constantly being linked to in a negative way. This is the Blue List. These are the communities that were most frequently targeted by others. Some of these are huge, like r/askreddit, which just gets a lot of links because it’s so big. But others are much more specific. You can see communities that were clearly "villains" in the eyes of the rest of the network, getting hammered with negative links from all over the place.
 
-To make it even clearer, we summarized the data to see the "Net Aggression." We wanted to know: is a community a pure attacker, a universal target, or can it do both ?
+To make it even clearer, you summarized the data to see the "Net Aggression." You wanted to know: is a community a pure attacker, a universal target, or can it do both ?
 
 {% include negative_hyperlinks_source.html %}
 
 This summary shows us that conflict wasn't just random noise: it was driven by specific cnetral nodes. Why this matters for your mission: Identifying these central nodes tells us who held the power and who caused the friction. If we’re going to understand how this society broke down, we have to follow the people who were starting the most fires.
 
-**Mission Status**: We now have our tools and we know who the players are. Now, we can finally zoom out and look at the whole timeline to see if we can spot the moment Earth started to trend toward chaos. Let's start by a Bottom-Up analysis.
+**Mission Status**: You now have your tools and you know who the players are. Now, you can finally zoom out and look at the whole timeline to see if we can spot the moment Earth started to trend toward chaos. Let's start by a Bottom-Up analysis.
 
 # BOTTOM-UP APPROACH
 
 #### 2.0 Overall evolution of hyperlink sentiment
 
-Now that we have finished the tools and identified the main players, let's look at the big picture. The hard part start : putting it all on a timeline. You have millions of data points, so your first task is to calculate the Normalized Conflict Fraction every single month for the entire archive, so from 2014 to 2017 to see if we could spot the moment everything started to slide toward the Great Collapse.
+Now that you have finished the tools and identified the main players, let's look at the big picture. The hard part start : putting it all on a timeline. You have millions of data points, so your first task is to calculate the Normalized Conflict Fraction every single month for the entire archive, so from 2014 to 2017 to see if we could spot the moment everything started to slide toward the Great Collapse.
 
 {% include proportion_negative_over_time.html %}
 
@@ -78,17 +78,17 @@ You have to refine your analysis. You can't analyze 55,000 subreddits one by one
 
 #### 2.1 Clustering
 
-Looking at individual subreddit is not that significant and it's quite difficult to interpret, as we could observe in the preliminary analysis.
+Looking at individual subreddit is not that significant and it's quite difficult to interpret, as you could observe in the preliminary analysis.
 
-**What should we do now ?**
+**What should you do now ?**
 
-Maybe we should try another approach. What if we looked at the evolution of subreddits that have the same thematic ? Maybe for example, by looking at all the groups about politics, we can observe out of normal behaviours.
+Maybe you should try another approach. What if you looked at the evolution of subreddits that have the same thematic ? Maybe for example, by looking at all the groups about politics, you can observe out of normal behaviours.
 
-But the majority of subreddits aren't very active, with very few posts in the span of 3 years. Taking all the subreddits might give us noisy results. We decided to arbitrarily choose the subreddits with a total post counts of at least **100 posts**.
+But the majority of subreddits aren't very active, with very few posts in the span of 3 years. Taking all the subreddits might give us noisy results. You decided to arbitrarily choose the subreddits with a total post counts of at least **100 posts**.
 
-How are we going to group similar subreddits ? From the last remaining piece of information from earth great collapse, we found ancient representations of the said subreddit that they called **embeddings**. Maybe we can use that to our advantage: what if two similar subreddit had **similar embeddings** ?
+How are you going to group similar subreddits ? From the last remaining piece of information from earth great collapse, we found ancient representations of the said subreddit that they called **embeddings**. Maybe you can use that to your advantage: what if two similar subreddit had **similar embeddings** ?
 
-Using a technique called **clustering**, we can group vectors by how close they are to each other. **K-Means** is an unsupervised machine learning algorithm used to group data into K clusters based on similarity.
+Using a technique called **clustering**, you can group vectors by how close they are to each other. **K-Means** is an unsupervised machine learning algorithm used to group data into K clusters based on similarity.
 
 <details>
 <summary><b>How K-Means works</b></summary>
@@ -101,7 +101,7 @@ Using a technique called **clustering**, we can group vectors by how close they 
 </ol>
 </details>
 
-Firstly, to find the optimal number of cluster (i.e the optimal number of different topics), we are going to use the **Elbow Method**.
+Firstly, to find the optimal number of cluster (i.e the optimal number of different topics), you are going to use the **Elbow Method**.
 
 The **Elbow Method** is a heuristic used to choose the optimal number of clusters (K) in clustering algorithms such as K-Means.
 
@@ -121,9 +121,9 @@ The elbow represents a good trade-off between model complexity (number of cluste
 
 {% include k_selection_elbow_silhouette.html.html %}
 
-We find an optimal k of 4. This seems a bit low and not specific enough, we might have too broad cluster subjects. The second best option seems to be a better alternative. We would likely choose 13 clusters.
+You find an optimal k of 4. This seems a bit low and not specific enough, you might have too broad cluster subjects. The second best option seems to be a better alternative. You would likely choose 13 clusters.
 
-Secondly, we will apply a method known as the **DB Scan** to remove the outliers that are far away from others subreddits (i.e maybe too unique).
+Secondly, you will apply a method known as the **DB Scan** to remove the outliers that are far away from others subreddits (i.e maybe too unique).
 
 **DBSCAN** is an unsupervised clustering algorithm that groups data based on **point density**, rather than distance to a centroid.
 
@@ -150,7 +150,7 @@ The map above shows us the different topic groups: the Politics Cluster, the Gam
 
 #### 2.2 T-SNE/PCA Plotting of clusters
 
-Let's now visually confirm that similar subreddits sit close to each other in the embedding space. But right now we have multidimensional vectors that are nos suited for plotting in 2d or 3d. We are going to use the **T-SNE and PCA dimension reduction method**.
+Let's now visually confirm that similar subreddits sit close to each other in the embedding space. But right now you have multidimensional vectors that are nos suited for plotting in 2d or 3d. You are going to use the **T-SNE and PCA dimension reduction method**.
 
 **PCA** is a linear dimensionality reduction technique that projects data onto a lower-dimensional space while **maximizing variance**.
 
@@ -198,17 +198,17 @@ Let's now visually confirm that similar subreddits sit close to each other in th
 **Observations**:
 
 * The PCA plot is less representative with no clear visual cluster of nodes.
-* On the other hand, the T-SNE plot clearly shows clusters, corresponding to each cluster theme we found. It is important to note that the classification isn't perfect but shows interesting informations still.
+* On the other hand, the T-SNE plot clearly shows clusters, corresponding to each cluster theme you found. It is important to note that the classification isn't perfect but shows interesting informations still.
 
 
 #### 2.3 Cluster negative and positive comments evolution analysis
-Now that we have our clusters, we can analyze the **trend evolution of negative or positive posts** for a given topic.
+Now that you have your clusters, you can analyze the **trend evolution of negative or positive posts** for a given topic.
 
-This could be usefull if we want to identify a **significant event** related to a given topic (for example: a major politic event at time t might lead to a significant increase in the trend of the politic cluster.)
+This could be useful if you want to identify a **significant event** related to a given topic (for example: a major politic event at time t might lead to a significant increase in the trend of the politic cluster.)
 
 But what is a **significant increase** ?
 
-We followed two methods:
+You followed two methods:
 <details>
   <summary><b>1. Rolling Average</b></summary>
   <div style="margin-top: 10px;">
@@ -239,7 +239,7 @@ We followed two methods:
   </div>
 </details>
 
-We are going to take the count evolution on a sliding window of a **given duration** (ex: 3 months). In each time window, we will fit the counts to a Poisson Law and look at the increase or decrease.
+You are going to take the count evolution on a sliding window of a **given duration** (ex: 3 months). In each time window, You will fit the counts to a Poisson Law and look at the increase or decrease.
 
 This method uses a **Generalized Linear Model (GLM) with a Poisson family** to detect **statistically significant increasing trends** in count data over time.
 
@@ -291,30 +291,30 @@ This method uses a **Generalized Linear Model (GLM) with a Poisson family** to d
 
 A **Negative Binomial GLM** may be more appropriate but the problem is that the data is not sufficient to model it.
 
-So as a first approximation we will use **Poisson GLM**.
+So as a first approximation you will use **Poisson GLM**.
 
 {% include significant_increases_plot.html.html %}
 
 **Observations**:
 
-* We can ignore the _first significant time window_ as it is just due to the start of the counts (mismatch between the starting date of the plot and the starting date of the counts).
+* You can ignore the _first significant time window_ as it is just due to the start of the counts (mismatch between the starting date of the plot and the starting date of the counts).
 * The _significant time windows_ seem to follow the time windows where the counts are above the rolling average in a sufficient manner.
 
 **Conclusions**:
 
-* From our observations, we could form the hypotethis that, in the significant time windows, major world events happened at the global political scale, leading to the **potential time windows of the collapse of society** !
+* From your observations, you could form the hypotethis that, in the significant time windows, major world events happened at the global political scale, leading to the **potential time windows of the collapse of society** !
 * These observations do not give us any informations on the groups involved nor the matter of the event.
 
 #### 2.4 Individual subreddit contribution
-Now, we can look at the significant time windows and extract the top active subreddits of the cluster ! This could give us an insight on who's been contributing the most to the negative increase.
+Now, you can look at the significant time windows and extract the top active subreddits of the cluster ! This could give you an insight on who's been contributing the most to the negative increase.
 
 {% include top_negative_subreddits.html.html %}
 
-So, we now have tools to find meaningful timespan where conflicts emmerged during the **Great collapse**. We can now link this to the archives on the mothership, where we could find historical events to compare.
+So, you now have tools to find meaningful timespan where conflicts emmerged during the **Great collapse**. You can now link this to the archives on the mothership, where you could find historical events to compare.
 
 # TOP-DOWN APPROACH
 
-The bottom-up approach gave us insights on the events timeline leading to the **Great Collapse**. You now remember that on the _mothership_, there are still ancient archives of **Earth History**.
+The bottom-up approach gave you insights on the events timeline leading to the **Great Collapse**. You now remember that on the _mothership_, there are still ancient archives of **Earth History**.
 
 You decide to go look through them, to maybe find significant events that we might relate to our analysis. After long nights under the dim lights of the archives, and after sacrifying your mental sanity, you manage to find significant events that you would consider as _potential disasters_.
 
