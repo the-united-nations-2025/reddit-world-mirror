@@ -332,15 +332,15 @@ This marks the transition to a **top-down approach**.
 The events you found out in the archives are mostly politics-related, having this only starting point, you decide to study 4 of major events:
 
 
-- **🦠Ebola outbreak(2014)**: A major Ebola virus disease outbreak that primarily affected West Africa, with widespread transmission reported throughout 2014.
+- **Ebola outbreak(2014)**: A major Ebola virus disease outbreak that primarily affected West Africa, with widespread transmission reported throughout 2014.
 
-- **🇫🇷Paris terrorist attacks(2015)**: A series of coordinated terrorist attacks that took place in Paris, France, on November 13, 2015.
-
-
-- **🇬🇧Brexit referendum(2016)**: A national referendum held in the United Kingdom on June 23, 2016, to decide whether the country should leave the European Union.
+- **Paris terrorist attacks(2015)**: A series of coordinated terrorist attacks that took place in Paris, France, on November 13, 2015.
 
 
-- **🇺🇸United States presidential election🇬🇧(late 2016)**: The U.S. presidential election held on November 8, 2016, resulting in the election of Donald Trump.
+- **Brexit referendum(2016)**: A national referendum held in the United Kingdom on June 23, 2016, to decide whether the country should leave the European Union.
+
+
+- **United States presidential election🇬🇧(late 2016)**: The U.S. presidential election held on November 8, 2016, resulting in the election of Donald Trump.
 
 As you were quite scared to dive into the complexity of Reddit network, your mentor gave you some **mission goals** to give you through this analysis. You will dive step by step into the analysis of **subreddits activity** during some events and look for correlation between the data and the event.
 
@@ -359,7 +359,7 @@ For each event you decide to plot the **top 15** subreddits that have increased 
 
 #### USA Election
 
-{% include USA_elections.html.html %}
+{% include us_election_neg_activity_animation.html %}
 
 When focusing on the period surrounding the U.S. presidential election, you observe a clear increase in negative activity in several subreddits. 
 * In the shortest time window, subreddits directly related to electoral and political discourse such as *`the_donald`*, *`enoughtrumpspam`*, and *`political_revolution`* rank among those with the largest activity increase.  
@@ -369,14 +369,14 @@ When focusing on the period surrounding the U.S. presidential election, you obse
 
 #### Brexit Referendum
 
-{% include brexit.html.html %}
+{% include brexit_neg_activity_animation.html %}
 
 In the Brexit-related graphs, you do not observe subreddits whose names are directly tied to the event itself. Instead, *`shitliberalssay`* is the only prominently visible community among those showing an increase in negative activity, representing a broader political or ideological discussion space.
 
 
 #### Paris terrorist attack
 
-{% include paris_attack.html.html %}
+{% include paris_neg_activity_animation.html %}
 
 * Among subreddits showing increased negative activity related to the Paris attacks, the *`european`* subreddit, which is directly related to Paris, also appears, although to a lesser extent.
 
@@ -386,7 +386,7 @@ In the Brexit-related graphs, you do not observe subreddits whose names are dire
 
 #### Ebola outbreak
 
-{% include ebola.html.html %}
+{% include ebola_neg_activity_animation.html %}
 
 The Ebola outbreak does not exhibit a clear event specific pattern in subreddit activity. Across all time windows, the top subreddits with increased negative activity are diverse and do not appear to be directly related to the outbreak itself. 
 > Overall, no clear or consistent pattern can be observed in the top negative activity subreddits during this period.
@@ -406,7 +406,7 @@ MISSION GOAL:
 ```
 
 #### USA Election
-{% include pairs_USA_elections.html.html %}
+{% include us_election_pairs.html %}
 
 * During the US presidential election period, you observe that some politically related subreddits appear in both source_subreddit(*`asktrumpsupporters`*) and target_subreddit(*`the_donald`*, *`enoughtrumpspam`*)!
 * You even observe negative hyperlink interactions between subreddits that are both directly related to the election: 
@@ -415,17 +415,17 @@ This graph shows a slight tendency for negative interactions to occur between su
 
 
 #### Brexit Referendum
-{% include pairs_brexit_referendum.html.html %}
+{% include brexit_topic_pairs.html %}
 
-Notably, the `shitliberalsay` subreddit, which appeared among the top subreddits with increased negative activity in the Brexit analysis, also appears here as part of the top subreddit pairs.
+Notably, the *`shitliberalsay`* subreddit, which appeared among the top subreddits with increased negative activity in the Brexit analysis, also appears here as part of the top subreddit pairs.
 
 
 #### Paris terrorist attack
-{% include pairs_paris_attack.html.html %}
+{% include paris_topic_pairs.html %}
 
 
 #### Ebola outbreak
-{% include pairs_ebola.html.html %}
+{% include ebola_topic_pairs.html %}
 
 * For the Paris attacks and Ebola outbreak periods, you do not observe clear event specific negative interaction patterns between subreddits...
 * Across these events, the most frequent interactions mainly involve **general communities**, such as *`askreddit`*, *`circlebroke`*, and *`subredditdrama`*, rather than subreddits directly named after or explicitly focused on the events themselves. While some politically or socially oriented subreddits appear intermittently, no consistent or concentrated interaction structure emerges around these events.
@@ -456,24 +456,19 @@ Going blindly in the data is not easily conclusive! Now you can look for the top
 This step helps you separate **event-driven activity** from background noise, strengthening the link between observed behavioral changes and the real-world event. Nevertheless, you will also lose potential subreddits involved that have a name not related with the event occurred, but every method comes at a cost!
 
 #### USA Election
-{% include source_USA_elections.html.html %}
+{% include us_election_keyword_filtered.html %}
 
 In the case of the US presidential election, multiple election-related subreddits appear within the event window. Among them, *`shitpoliticssays`*, *`political_revolution`*, and *`enoughtrumpspam`* show relatively larger increases in negative activity.
 
 
 #### Brexit Referendum
-{% include source_brexit.html.html %}
+{% include brexit_keyword_filtered.html %}
 
 Several event-related subreddits appear within the event window, indicating that the referendum is reflected in the data. 
 
 However, the observed increases in negative activity are relatively small and distributed across multiple subreddits, rather than being dominated by a single community.
 
-#### Paris terrorist attack 
-{% include source_paris_attack.html.html %}
-
-#### Ebola outbreak
-{% include source_ebola.html.html%}
-
+#### Paris terrorist attack &Ebola outbreak
 For the keyword-filtered analysis around the Paris terrorist attack and the Ebola outbreak, no visible increase in negative activity is observed. 
 This indicates that, within these narrow time spans, even subreddits related to the event do not exhibit a measurable rise in negative interactions.
 
@@ -493,33 +488,34 @@ MISSION GOAL:
 > This may reveal **coordinated discussion hubs** linked with the studied events.
 
 #### USA Election
-{% include pairs_keyword_USA.html.html %}
+{% include us_election_keyword_topic_pairs.html %}
 
 * During the US presidential election period, the keyword filtered analysis reveals multiple negative interactions between election-related subreddits, but only with low interaction counts.
 
 * Notably, the same subreddits repeatedly appear as either the source or the target of these negative interactions, suggesting that these interactions are relatively **concentrated** within communities that address similar themes.
 
 #### Brexit Referendum
-{% include pairs_keyword_brexit.html.html %}
+{% include brexit_keyword_topic_pairs.html %}
 
-The `europe` subreddit appears multiple times as a target across different pairs.  
+The *`europe`* subreddit appears multiple times as a target across different pairs.  
 However, given the low interaction counts, this pattern remains weak and does not provide any evidence of a high activity of the topic-linked subreddits in the context of this event.
 
 #### Paris terrorist attack
-{% include pairs_keyword_paris.html.html %}
+{% include paris_keyword_topic_pairs.html %}
 
 In the keyword-filtered analysis of the Paris attacks, only four negative interactions are observed.  
 These interactions are primarily initiated by the *`engineeredattacks`* subreddit toward other subreddits.  Notably, the detected interactions do not directly involve subreddits explicitly focused on the Paris attacks, suggesting that these negative interactions are unlikely to be specifically driven by the event itself.
 
 #### Ebola outbreak
-{% include pairs_keyword_ebola.html.html %}
+{% include ebola_keyword_topic_pairs.html %}
 
 For the Ebola outbreak, consistent with the earlier keyword-based negative activity analysis, no clear interaction pattern between subreddits is observed.
 The keyword-filtered pair-level analysis reveals only a single negative interaction, indicating that, within this time window, the subreddits captured by the keyword filtering do not exhibit a noticeable increase in negative interactions.
 
 
 #### Conclusion
-MISSION GOALS DONE! This **top-down analysis based on subreddits activities** examines whether major real-world events are reflected in changes in negative hyperlink interactions between Reddit communities. However, the approaches based on topic-linked subreddits are limited in their interpretations, as the analysis design is lacking controls.
+MISSION GOALS DONE! This **top-down analysis based on subreddits activities** examines whether major real-world events are reflected in changes in negative hyperlink interactions between Reddit communities. By focusing on well known global events and analyzing subreddit interactions before and after their occurrence, this approach allows us to assess whether such events leave detectable traces in online community behavior.
+However, you realized that some of the tasks you were given were quite limited in their interpretations, as the analysis design was lacking controls (such as the keyword filtering).
 
 **What can you extract from this analysis?**
 > Major real world events seem to be reflected in negative interactions between Reddit communities in different ways and with varying intensity. 
