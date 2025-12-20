@@ -536,7 +536,7 @@ But be careful... you can't be sure at 100% that those two facts are indeed corr
 
 #### Conclusion
 MISSION GOALS DONE! This **top-down analysis based on subreddits activities** examines whether major real-world events are reflected in changes in negative hyperlink interactions between Reddit communities. By focusing on well known global events and analyzing subreddit interactions before and after their occurrence, this approach allows us to assess whether such events leave detectable traces in online community behavior.
-However, you realized that some of the tasks you were given were quite limited in their interpretations, as the analysis design was lacking controls (such as the keyword filtering).
+However, you realized that some of the tasks you were given were quite limited in their interpretations (such as the keyword filtering).
 
 **What can you extract from this analysis?**
 > Major real world events seem to be reflected in negative interactions between Reddit communities in different ways and with varying intensity. 
