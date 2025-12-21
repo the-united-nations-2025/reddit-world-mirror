@@ -235,29 +235,13 @@ This method uses a **Generalized Linear Model (GLM) with a Poisson family** to d
 <details>
   <summary><b>3. Poisson GLM Model Formulation</b></summary>
   <div style="margin-top: 10px;">
-    1. Sliding window approach
-    The model is fitted on overlapping time windows of fixed length. This allows detection of local increases rather than a single global trend.
-
-    2. Hypothesis testing
-    For each window, the following hypotheses are tested:
-    * Null hypothesis: H_0: beta_1 = 0
-    * Alternative hypothesis: H_1: beta_1 > 0
-
-    A window is considered significant if: p-value < alpha (the chosen significance threshold).
-
-    3. Interpretation of the trend coefficient
-    * beta_1 > 0: exponential increase in expected counts.
-    * e^beta_1: multiplicative change in the expected count per time unit.
-
-    4. Output
-    The method returns all time windows where a **statistically significant increase in sentiment-related counts is detected, including:
-    * Window start and end times
-    * Estimated trend coefficient (beta_1)
-    * Associated p-value
-
-    5. Limitations of this method
-    * Observations are probably not conditionally independent.
-    * Mean equals variance is probably not the case (overdispersion).
+  <ol>
+  <li>1. Sliding window approach: The model is fitted on overlapping time windows of fixed length. This allows detection of local increases rather than a single global trend.</li>
+  <li>2. Hypothesis testing: For each window, the following hypotheses are tested: Null hypothesis: H_0: beta_1 = 0 & Alternative hypothesis: H_1: beta_1 > 0. A window is considered significant if: p-value < alpha (the chosen significance threshold).</li>
+  <li>3. Interpretation of the trend coefficient: beta_1 > 0: exponential increase in expected counts. e^beta_1: multiplicative change in the expected count per time unit.</li>
+  <li> 4. Output: The method returns all time windows where a **statistically significant increase in sentiment-related counts is detected, including: window start and end times, estimated trend coefficient (beta_1), associated p-value</li>
+  <li> 5. Limitations of this method: observations are probably not conditionally independent & mean equals variance is probably not the case (overdispersion).</li>
+  </ol>
   </div>
 </details>
 
