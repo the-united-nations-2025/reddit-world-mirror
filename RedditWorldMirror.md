@@ -220,13 +220,11 @@ You followed two methods:
 <details>
   <summary><b>2. Poisson distribution</b></summary>
   <div style="margin-top: 10px;">
-  <p>Let's assume our negative/positive follows a Poisson law. This is appropriate because:<p>
-  <ol>
-  <li>Counts of events are observed in a fixed unit of time, space, or sequence: In your case, positive or negative counts are observed per time step.</li>
-  <li>We assume events occur independently: Each sentiment count at one time step is assumed not to directly affect counts at another time step, at least within the window.</li>
-  <li>We assume the mean equals the variance (or approximately): Poisson assumes that the expected count is equal to the variance of counts.</li>
-  <li>Small deviations are acceptable, but large overdispersion may require a Negative Binomial model.</li>
-  </ol>
+    <p>Let's assume our negative/positive follows a Poisson law. This is appropriate because:</p>
+    * Counts of events are observed in a <b>fixed unit of time, space, or sequence</b>: In your case, positive or negative counts are observed per time step.</p>
+    * We assume events occur <b>independently</b>: Each sentiment count at one time step is assumed not to directly affect counts at another time step, at least within the window.</p>
+    * We assume the <b>mean</b> equals the <b>variance</b> (or approximately): Poisson assumes that the expected count ($\lambda$) is equal to the variance of counts.</p>
+    * Small deviations are acceptable, but large overdispersion may require a Negative Binomial model.</p>
   </div>
 </details>
 
