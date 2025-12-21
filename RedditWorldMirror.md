@@ -296,7 +296,7 @@ The events you found out in the archives are mostly politics-related, having thi
 - **Brexit referendum(2016)**: A national referendum held in the United Kingdom on June 23, 2016, to decide whether the country should leave the European Union.
 
 
-- **United States presidential election🇬🇧(late 2016)**: The U.S. presidential election held on November 8, 2016, resulting in the election of Donald Trump.
+- **United States presidential election(late 2016)**: The U.S. presidential election held on November 8, 2016, resulting in the election of Donald Trump.
 
 As you were quite scared to dive into the complexity of Reddit network, your mentor gave you some **mission goals** to guide you through this analysis. You will dive step by step into the analysis of **subreddit activity** during some events and look for correlation between the data and the event.
 
