@@ -218,13 +218,25 @@ You followed two methods:
 </details>
 
 <details>
+<summary><b>2. Poisson distribution</b></summary>
+<ol>
+<li>Run the clustering algorithm for different values of (K).</li>
+<li>Compute the within-cluster sum of squares (WCSS) for each (K).</li>
+<li>Plot WCSS versus (K).</li>
+<li>Identify the “elbow” point where the decrease in WCSS starts to level off.</li>
+</ol>
+</details>
+
+
+<details>
   <summary><b>2. Poisson distribution</b></summary>
   <div style="margin-top: 10px;">
-    <p>Let's assume our negative/positive follows a Poisson law. This is appropriate because:</p>
-    </p>* Counts of events are observed in a <b>fixed unit of time, space, or sequence</b>: In your case, positive or negative counts are observed per time step.</p>
-    </p>* We assume events occur <b>independently</b>: Each sentiment count at one time step is assumed not to directly affect counts at another time step, at least within the window.</p>
-    </p>* We assume the <b>mean</b> equals the <b>variance</b> (or approximately): Poisson assumes that the expected count ($\lambda$) is equal to the variance of counts.</p>
-    </p>* Small deviations are acceptable, but large overdispersion may require a Negative Binomial model.</p>
+  <ol>
+  <li>Run the clustering algorithm for different values of (K).</li>
+  <li>Compute the within-cluster sum of squares (WCSS) for each (K).</li>
+  <li>Plot WCSS versus (K).</li>
+  <li>Identify the “elbow” point where the decrease in WCSS starts to level off.</li>
+  </ol>
   </div>
 </details>
 
