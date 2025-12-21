@@ -50,11 +50,11 @@ You track every single negative link (LINK_SENTIMENT = -1) to find the source an
 
 ###### The Instigators (The Attackers)
 
-First, you tracked which communities were the most aggressive. You looked at the "Source" of every negative link to see who was reaching out to start trouble. This is the Red List. These are the top subreddits that initiated the most conflict links. Weirdly enough, you will see names like *`r/subredditdrama`* right at the top. It makes sense as their whole purpose was to find and talk about fights happening elsewhere. By looking at this, we can identify which "tribes" were the most active in pushing the network toward a breaking point.
+First, you tracked which communities were the most aggressive. You looked at the "Source" of every negative link to see who was reaching out to start trouble. This is the Red List. These are the top subreddits that initiated the most conflict links. Weirdly enough, you will see names like *`subredditdrama`* right at the top. It makes sense as their whole purpose was to find and talk about fights happening elsewhere. By looking at this, we can identify which "tribes" were the most active in pushing the network toward a breaking point.
 
 ###### The Targets (The Victims)
 
-But a fight has two sides. You also had to look at the "Targets", so the communities that were constantly being linked to in a negative way. This is the Blue List. These are the communities that were most frequently targeted by others. Some of these are huge, like *`r/askreddit`*, which just gets a lot of links because it’s so big. But others are much more specific. You can see communities that were clearly "villains" in the eyes of the rest of the network, getting hammered with negative links from all over the place.
+But a fight has two sides. You also had to look at the "Targets", so the communities that were constantly being linked to in a negative way. This is the Blue List. These are the communities that were most frequently targeted by others. Some of these are huge, like *`askreddit`*, which just gets a lot of links because it’s so big. But others are much more specific. You can see communities that were clearly "villains" in the eyes of the rest of the network, getting hammered with negative links from all over the place.
 
 To make it even clearer, you summarized the data to see the "Net Aggression." You wanted to know: is a community a pure attacker, a universal target, or can it do both?
 
@@ -214,15 +214,6 @@ You followed two methods:
   <summary><b>1. Rolling Average</b></summary>
   <div style="margin-top: 10px;">
     <p><b>Why?</b> Because the rolling average acts as a smoothed baseline, calculated using a defined window (you can define the wanted window as a parameter), which helps to visually identify deviations from the expected trend. When the post sentiment count falls <b>above</b> the rolling average, it suggests that the post sentiment count has <b>increased</b> relative to its typical trend.</p>
-    <p>Here, a simple moving average was implemented as followed:</p>
-    <p>![image-title-here](/assets/img/Equation.png){:class="img-responsive"}<p>
-    <p>$$\text{RollingAvg}_t = \frac{1}{w} \sum_{i=0}^{w-1} x_{t-i}$$</p>
-    <p>where:</p>
-    <ul>
-      <li>$x_t$: count at time $t$</li>
-      <li>$w$: window size (number of points in the average)</li>
-      <li>$\text{RollingAvg}_t$: average of the current and previous $w-1$ counts</li>
-    </ul>
   </div>
 </details>
 
