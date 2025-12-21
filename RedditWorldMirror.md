@@ -215,6 +215,7 @@ You followed two methods:
   <div style="margin-top: 10px;">
     <p><b>Why?</b> Because the rolling average acts as a smoothed baseline, calculated using a defined window (you can define the wanted window as a parameter), which helps to visually identify deviations from the expected trend. When the post sentiment count falls <b>above</b> the rolling average, it suggests that the post sentiment count has <b>increased</b> relative to its typical trend.</p>
     <p>Here, a simple moving average was implemented as followed:</p>
+    <p>![image-title-here](/assets/img/Equation.png){:class="img-responsive"}<p>
     <p>$$\text{RollingAvg}_t = \frac{1}{w} \sum_{i=0}^{w-1} x_{t-i}$$</p>
     <p>where:</p>
     <ul>
