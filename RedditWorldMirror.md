@@ -9,8 +9,9 @@ _So now, here we are in **2174**, and we still have a big hole in our understand
 _As an **Intern in Earth History**, you have been designated to participate in the huge project to reconstruct Earth’s past. Your specific mission is to **reconstruct the history of the volatile 2014–2017 era**. You need to figure out how that advanced society broke down._
 
 _The main **Research Questions** you need to tackle are the following:_
-1. _Can world events in times of crisis be reflected in the sentiment evolution of subreddits interactions?_
-2. _Can world events affect the dynamics of subreddits interactions?_
+1. _Can we observe sentiment evolution over time in the Reddit hyperlink network from 2014 to 2017?_
+2. _How can we organize the Reddit hyperlink data to make large-scale sentiment dynamics more interpretable?_
+3. _Can major real-world events be reflected in changes in subreddit interactions and sentiment?_
 <br>
 
 # Preliminary Analysis
