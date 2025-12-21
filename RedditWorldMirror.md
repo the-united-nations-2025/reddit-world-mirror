@@ -66,7 +66,7 @@ _**Mission Status**: You now have your tools and you know who the players are. N
 
 # BOTTOM-UP APPROACH
 
-##### 2.0 Overall evolution of hyperlink sentiment
+### 2.0 Overall evolution of hyperlink sentiment
 
 Now that you have finished the tools and identified the main players, let's look at the big picture. The hard part starts: putting it all on a timeline. You have millions of data points, so your first task is to calculate the **Normalized Conflict Fraction** every single month for the entire archive, so from 2014 to 2017, to see if you could spot the moment everything started to slide toward the Great Collapse.
 
@@ -77,7 +77,7 @@ Look at that graph. If you were hoping for a clean, straight line that tells a s
 
 You have to refine your analysis. You can't analyze 55,000 subreddits one by one. A solution is to use **clustering**.
 
-##### 2.1 Clustering
+### 2.1 Clustering
 
 Looking at individual subreddits is not that significant and it's quite difficult to interpret, as you could observe in the preliminary analysis.
 
@@ -149,7 +149,7 @@ You now have clusters of similar subreddits! The question is now: What are their
 
 The map above shows you the different topic groups: the Politics Cluster, the Gaming Cluster, the Neutral News Cluster, and so on. This proves the chaos is organized. 
 
-##### 2.2 T-SNE/PCA Plotting of clusters
+### 2.2 T-SNE/PCA Plotting of clusters
 
 Let's now visually confirm that similar subreddits sit close to each other in the embedding space. But right now you have multidimensional vectors that are not suited for plotting in 2D or 3D. You are going to use the **T-SNE and PCA dimension reduction method**.
 
@@ -202,10 +202,10 @@ Let's now visually confirm that similar subreddits sit close to each other in th
 * On the other hand, the T-SNE plot clearly shows clusters, corresponding to each cluster theme you found. It is important to note that the classification isn't perfect but shows interesting informations still.
 
 
-##### 2.3 Cluster negative and positive comments evolution analysis
+### 2.3 Cluster negative and positive comments evolution analysis
 Now that you have your clusters, you can analyze the **trend evolution of negative or positive posts** for a given topic.
 
-This could be useful if you want to identify a **significant event** related to a given topic (for example: a major politic event at time t might lead to a significant increase in the trend of the political cluster.)
+This could be useful if you want to identify a **significant event** related to a given topic (for example: a major political event at time t might lead to a significant increase in the trend of the political cluster.)
 
 But what is a **significant increase**?
 
@@ -303,21 +303,21 @@ So as a first approximation you will use **Poisson GLM**.
 
 **Conclusions**:
 
-* From your observations, you could form the hypotethis that, in the significant time windows, major world events happened at the global political scale, leading to the **potential time windows of the collapse of society** !
-* These observations do not give us any informations on the groups involved nor the matter of the event.
+* From your observations, you could form the hypothesis that, in the significant time windows, major world events happened at the global political scale, leading to the **potential time windows of the collapse of society**!
+* These observations do not give you any information on the groups involved nor the matter of the event.
 
-#### 2.4 Individual subreddit contribution
-Now, you can look at the significant time windows and extract the top active subreddits of the cluster ! This could give you an insight on who's been contributing the most to the negative increase.
+### 2.4 Individual subreddit contribution
+Now, you can look at the significant time windows and extract the top active subreddits of the cluster! This could give you an insight on who's been contributing the most to the negative increase.
 
 {% include top_negative_subreddits.html.html %}
 
-So, you now have tools to find meaningful timespan where conflicts emmerged during the **Great collapse**. You can now link this to the archives on the mothership, where you could find historical events to compare.
+So, you now have tools to find meaningful timespans where conflicts emerged during the **Great collapse**. You can now link this to the archives on the mothership, where you could find historical events to compare.
 
 # TOP-DOWN APPROACH
 
 The bottom-up approach gave you insights on the events timeline leading to the **Great Collapse**. You now remember that on the _mothership_, there are still ancient archives of **Earth History**.
 
-You decide to go look through them, to maybe find significant events that we might relate to our analysis. After long nights under the dim lights of the archives, and after sacrifying your mental sanity, you manage to find significant events that you would consider as _potential disasters_.
+You decide to go look through them, to maybe find significant events that you might relate to your analysis. After long nights under the dim lights of the archives, and after sacrificing your mental sanity, you manage to find significant events that you would consider as _potential disasters_.
 
 At this stage, you shift perspective. Instead of asking:
 
@@ -343,7 +343,7 @@ The events you found out in the archives are mostly politics-related, having thi
 
 - **United States presidential election🇬🇧(late 2016)**: The U.S. presidential election held on November 8, 2016, resulting in the election of Donald Trump.
 
-As you were quite scared to dive into the complexity of Reddit network, your mentor gave you some **mission goals** to give you through this analysis. You will dive step by step into the analysis of **subreddits activity** during some events and look for correlation between the data and the event.
+As you were quite scared to dive into the complexity of Reddit network, your mentor gave you some **mission goals** to guide you through this analysis. You will dive step by step into the analysis of **subreddit activity** during some events and look for correlation between the data and the event.
 
 ### Analysis 1 —  Which subreddits increase their activity the most around a major world event?
 To address this question, you decide measure the activity of each **source subreddit** before and after the event, using the **number of outgoing hyperlinks** as a proxy for participation and engagement.
@@ -383,7 +383,7 @@ In the Brexit-related graphs, you do not observe subreddits whose names are dire
 
 * In contrast, *`conspiracy`* and *`shitliberalssay`*, which are not directly related to the event by name, rank highly in terms of increased negative activity within both short and long time windows.
 
-> Overall, this pattern indicates that higher increase in negative activity for these subreddits are primarily observed within the shortest time window surrounding the event.
+> Overall, this pattern indicates that higher increases in negative activity for these subreddits are primarily observed within the shortest time window surrounding the event.
 
 #### Ebola outbreak
 
@@ -411,7 +411,7 @@ MISSION GOAL:
 
 * During the US presidential election period, you observe that some politically related subreddits appear in both source_subreddit(*`asktrumpsupporters`*) and target_subreddit(*`the_donald`*, *`enoughtrumpspam`*)!
 * You even observe negative hyperlink interactions between subreddits that are both directly related to the election: 
-  - in the negative interaction *`asktrumpsupporters → the_donald`*, both the source and the target subreddits are election-related.
+  - In the negative interaction *`asktrumpsupporters → the_donald`*, both the source and the target subreddits are election-related.
 This graph shows a slight tendency for negative interactions to occur between subreddits with similar themes.
 
 
@@ -438,10 +438,10 @@ Notably, the *`shitliberalsay`* subreddit, which appeared among the top subreddi
 
 #### **Introducing Event-Specific Knowledge**
 
-At this point, our previous work becomes essential.
+At this point, your previous work becomes essential.
 
-Thanks to earlier **bottom-up exploration**, historical records, and intergenerational knowledge, we already possess a rough understanding of the themes surrounding each event.
-From this, we have extracted event-related keywords. This allows us to refine our focus.
+Thanks to earlier **bottom-up exploration**, historical records, and intergenerational knowledge, you already possess a rough understanding of the themes surrounding each event.
+From this, you have extracted event-related keywords. This allows you to refine your focus.
 
 -----
 
@@ -454,7 +454,7 @@ Going blindly in the data is not easily conclusive! Now you can look for the top
 - Loook for source subreddits that initiated negative hyperlinks
 ```
 
-This step helps you separate **event-driven activity** from background noise, strengthening the link between observed behavioral changes and the real-world event. Nevertheless, you will also lose potential subreddits involved that have a name not related with the event occurred, but every method comes at a cost!
+This step helps you separate **event-driven activity** from background noise, strengthening the link between observed behavioral changes and the real-world event. Nevertheless, you will also lose potential subreddits involved that have a name not related with the event that occurred, but every method comes at a cost!
 
 #### USA Election
 {% include us_election_keyword_filtered.html %}
@@ -520,18 +520,18 @@ MISSION GOAL (another one!):
 Could you link this approach with the bottom-up analysis?
 It could be nice to verify that the significant timeframes you found in the bottom-up correspond to some meaningful events!
 ```
-You decide to target first the "Politics" and "Social Justice" clusters. Your base hypothethis would be that those two themes correspond the most to your previous events.
+You decide to target first the "Politics" and "Social Justice" clusters. Your base hypothesis would be that those two themes correspond the most to your previous events.
 
-These events will be used to test our hypothethis of the significant timeframes from the bottom-up analysis.
+These events will be used to test your hypothesis of the significant timeframes from the bottom-up analysis.
 
 {% include sentiment_evol_social_justice_w_events.html %}
 {% include sentiment_evol_politics_w_events.html %}
 
-Overall, the events fall into a significant timespan. It makes sense that the Brexit Referendum falls more in the Politics topic and that we see a significant increase for this event.
+Overall, the events fall into a significant timespan. It makes sense that the Brexit Referendum falls more in the Politics topic and that you see a significant increase for this event.
 
-On the other hand, there are significant increases during the USA election and the Paris attack in the Social Justice topic. These are subjects more controvertial, with people giving their opinion on social matters related to those topics.
+On the other hand, there are significant increases during the USA election and the Paris attack in the Social Justice topic. These are subjects more controversial, with people giving their opinion on social matters related to those topics.
 
-> In conlusion, some significant timespan do correspond to events that you defined as meaningful!
+> In conclusion, some significant timespans do correspond to events that you defined as meaningful!
 
 But be careful... you can't be sure at 100% that those two facts are indeed correlated.
 
@@ -585,7 +585,7 @@ For the different event analysis, you compute different graphs:
 ### 2.2. Graph metrics
 
 **What can you extract from this messy web?**
-To analyse a graph, you can compute different metrics to assess the importance of the subreddits in the graph (as _nodes_) both on a local scale considering their neighboring interactions, and on a global scale, considering its importance on the overall network structure.
+To analyze a graph, you can compute different metrics to assess the importance of the subreddits in the graph (as _nodes_) both on a local scale considering their neighboring interactions, and on a global scale, considering its importance on the overall network structure.
 Here you compute the following metrics:
 
 | Metric            | Computation | Meaning |
