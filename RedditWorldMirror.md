@@ -235,46 +235,29 @@ This method uses a **Generalized Linear Model (GLM) with a Poisson family** to d
 <details>
   <summary><b>3. Poisson GLM Model Formulation</b></summary>
   <div style="margin-top: 10px;">
+    1. Sliding window approach
+    The model is fitted on overlapping time windows of fixed length. This allows detection of local increases rather than a single global trend.
 
-    1. Model Formulation
-
-    For each sliding time window, the following model is fitted:
-
-    $$y_t \sim \text{Poisson}(\lambda_t)$$
-    $$\log(\lambda_t) = \beta_0 + \beta_1 t$$
-
-    where:
-    * $y_t$: is the observed count at time $t$
-    * $\lambda_t$: is the expected count
-    * $t$: is the time index
-    * $\beta_1$: represents the **log-rate of change** over time
-
-    The **log link function** ensures that predicted counts remain positive.
-
-    2. Sliding window approach
-    The model is fitted on **overlapping time windows** of fixed length. This allows detection of **local increases** rather than a single global trend.
-
-    3. Hypothesis testing
+    2. Hypothesis testing
     For each window, the following hypotheses are tested:
-    * Null hypothesis: $H_0: \beta_1 \le 0$
-    * Alternative hypothesis: $H_1: \beta_1 > 0$
+    * Null hypothesis: H_0: beta_1 = 0
+    * Alternative hypothesis: H_1: beta_1 > 0
 
-    A window is considered significant if: $p\text{-value} < \alpha$ (the chosen significance threshold).
+    A window is considered significant if: p-value < alpha (the chosen significance threshold).
 
-    4. Interpretation of the trend coefficient
-    * $\beta_1 > 0$: exponential increase in expected counts.
-    * $e^{\beta_1}$: multiplicative change in the expected count per time unit (e.g., $e^{\beta_1} = 1.05 \rightarrow 5\%$ increase per time unit).
+    3. Interpretation of the trend coefficient
+    * beta_1 > 0: exponential increase in expected counts.
+    * e^beta_1: multiplicative change in the expected count per time unit.
 
-    5. Output
-    The method returns all time windows where a **statistically significant increase** in sentiment-related counts is detected, including:
+    4. Output
+    The method returns all time windows where a **statistically significant increase in sentiment-related counts is detected, including:
     * Window start and end times
-    * Estimated trend coefficient ($\beta_1$)
+    * Estimated trend coefficient (beta_1)
     * Associated p-value
 
-    6. Limitations of this method
+    5. Limitations of this method
     * Observations are probably not conditionally independent.
     * Mean equals variance is probably not the case (overdispersion).
-    * A **Negative Binomial GLM** may be more appropriate, but the data volume is often insufficient to model it reliably. So, as a first approximation, we use a **Poisson GLM**.
   </div>
 </details>
 
