@@ -2,15 +2,16 @@
 
 #### _[January 2nd 2174]_
 
-_You know the history books, but they are mostly blank pages. The world we are trying to study, **Earth**, was fine until the **Global Conflict of 2080** happened. That massive war totally destroyed the planet, made it completely unviable, and forced all surviving civilization to pack up and leave in huge spacecraft vessels. Nothing from this ancient, moderned and highly developed civilization, called Humans, survived the disaster._
+_You know the history books, but they are mostly blank pages. The world we are trying to study, **Earth**, was fine until the **Global Conflict of 2080** happened. That massive war totally destroyed the planet, made it completely unviable, and forced all surviving civilization to pack up and leave in huge spacecraft vessels. Nothing from this ancient, modern and highly developed civilization, called Humans, survived the disaster._
 
-_So now, here we are in **2174**, and we still have a big hole in our understanding of what actually led up to that collapse, and more generally of the life of this civilization in Earth almost 100 years ago. That's where you come in._
+_So now, here we are in **2174**, and we still have a big hole in our understanding of what actually led up to that collapse, and more generally of the life of this civilization on Earth almost 100 years ago. That's where you come in._
 
-_As an **Intern in Earth History**, you have been designated to participate to the huge project to reconstruct Earth’s past. Your specific mission is to **reconstruct the history of the volatile 2014–2017 era**. You need to figure out how that advanced society broke down._
+_As an **Intern in Earth History**, you have been designated to participate in the huge project to reconstruct Earth’s past. Your specific mission is to **reconstruct the history of the volatile 2014–2017 era**. You need to figure out how that advanced society broke down._
 
 _The main **Research Questions** you need to tackle are the following:_
 1. _Can world events in times of crisis be reflected in the sentiment evolution of subreddits interactions?_
 2. _Can world events affect the dynamics of subreddits interactions?_
+<br>
 
 # Preliminary Analysis
 
@@ -22,7 +23,7 @@ The unique and most important artifact we recovered from the crash is the [**Red
 
 It just tracks connections between thousands of subreddits which represent their digital communities. You're probably thinking the same thing: _If the text is corrupted, how can we tell what happened in those years?_
 
-But don't let the language barrier scare you off. The core emotions-the anger, the sadness, the joy-are universal. Your entire mission is based on analyzing the **network's relationships** and the **emotional scores** as they are the only tool we have left to understand what happened.
+But don't let the language barrier scare you off. The core emotions-the anger, the sadness, the joy-are universal. Your entire mission is based on analyzing the **network's relationships** and the **emotional scores** as they are the only tool you have left to understand what happened.
 
 ### Deciphering the Code
 
@@ -30,68 +31,68 @@ You are now looking at the archive. Before starting the big analysis, you first 
 
 You don't need a text translator. You just need to focus on two things: the relationships (who linked to whom) and the emotion (±1 score). But first, you need to verify if those surviving emotional scores are actually reliable indicators of real human feelings. Can we prove that certain types of languages led to certain types of links or certain types of attacks?
 
-You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see exactly which words were driving the ±1 sentiment score.
+You need to use the surviving **Linguistic Artifacts** (the LIWC scores) to see exactly which words were driving the ±1 sentiment scores.
 
 _Post properties associated with negative (red) vs positive (green) sentiment_
 {% include Test10.html %}
 
 That chart right there is our proof! It shows exactly which language drives the digital interactions:
-* The red bars (positive correlation) confirm that features like LIWC_Anger and VADER Negative sentiment are strongly linked to conflict links (LINK_SENTIMENT=−1).
-* The green bars (negative correlation) confirm that positive features like LIWC_Posemo and VADER Positive sentiment are strongly linked to friendly links (LINK_SENTIMENT=+1).
+* The red bars (positive correlation) confirm that features like _LIWC_Anger_ and _VADER Negative sentiment_ are strongly linked to **conflict links** (LINK_SENTIMENT=−1).
+* The green bars (negative correlation) confirm that positive features like _LIWC_Posemo_ and _VADER Positive sentiment_ are strongly linked to **friendly links** (LINK_SENTIMENT=+1).
 
 This confirms that the data is viable for reconstructing the history of the 2014–2017 era as we can actually "read" the emotion of a dead civilization.
 
-Now that you know _what_ language drove the sentiment, you need to know _who_ the main players were. If we want to understand the chaos of 2014–2017, we cannot treat the entire network the same way. We need to identify the "hotspots": the communities that were most likely to start a digital fight, and the ones that were constantly getting attacked. 
+Now that you know _what_ language drove the sentiment, you need to know _who_ the main players were. If you want to understand the chaos of 2014–2017, you cannot treat the entire network the same way. You need to identify the "hotspots": the communities that were most likely to start a digital fight, and the ones that were constantly getting attacked. 
 
-You track every single negative link (LINK_SENTIMENT = -1) to find the source and the target. To do this, you split the conflict into two sides: the Instigators (the ones starting the fights) and the Targets (the ones getting called out). Check out what the data showed us:
+You track every single negative link (LINK_SENTIMENT = -1) to find the source and the target. To do this, you split the conflict into two sides: the **Instigators** (the ones starting the fights) and the **Targets** (the ones getting called out). Check out what the data showed you:
 
 {% include subreddits_receiving_starting.html %}
 
 ###### The Instigators (The Attackers)
 
-First, you tracked which communities were the most aggressive. You looked at the "Source" of every negative link to see who was reaching out to start trouble. This is the Red List. These are the top subreddits that initiated the most conflict links. Weirdly enough, you will see names like r/subredditdrama right at the top. It makes sense as their whole purpose was to find and talk about fights happening elsewhere. By looking at this, we can identify which "tribes" were the most active in pushing the network toward a breaking point.
+First, you tracked which communities were the most aggressive. You looked at the "Source" of every negative link to see who was reaching out to start trouble. This is the Red List. These are the top subreddits that initiated the most conflict links. Weirdly enough, you will see names like _r/subredditdrama_ right at the top. It makes sense as their whole purpose was to find and talk about fights happening elsewhere. By looking at this, we can identify which "tribes" were the most active in pushing the network toward a breaking point.
 
 ###### The Targets (The Victims)
 
-But a fight has two sides. You also had to look at the "Targets", so the communities that were constantly being linked to in a negative way. This is the Blue List. These are the communities that were most frequently targeted by others. Some of these are huge, like r/askreddit, which just gets a lot of links because it’s so big. But others are much more specific. You can see communities that were clearly "villains" in the eyes of the rest of the network, getting hammered with negative links from all over the place.
+But a fight has two sides. You also had to look at the "Targets", so the communities that were constantly being linked to in a negative way. This is the Blue List. These are the communities that were most frequently targeted by others. Some of these are huge, like _r/askreddit_, which just gets a lot of links because it’s so big. But others are much more specific. You can see communities that were clearly "villains" in the eyes of the rest of the network, getting hammered with negative links from all over the place.
 
-To make it even clearer, you summarized the data to see the "Net Aggression." You wanted to know: is a community a pure attacker, a universal target, or can it do both ?
+To make it even clearer, you summarized the data to see the "Net Aggression." You wanted to know: is a community a pure attacker, a universal target, or can it do both?
 
 {% include negative_hyperlinks_source.html %}
 
-This summary shows us that conflict wasn't just random noise: it was driven by specific cnetral nodes. Why this matters for your mission: Identifying these central nodes tells us who held the power and who caused the friction. If we’re going to understand how this society broke down, we have to follow the people who were starting the most fires.
+This summary shows you that conflict wasn't just random noise: it was driven by specific **central nodes**. Why this matters for your mission: Identifying these central nodes tells you who held the power and who caused the friction. If you’re going to understand how this society broke down, you have to follow the people who were starting the most fires.
 
-**Mission Status**: You now have your tools and you know who the players are. Now, you can finally zoom out and look at the whole timeline to see if we can spot the moment Earth started to trend toward chaos. Let's start by a Bottom-Up analysis.
+_**Mission Status**: You now have your tools and you know who the players are. Now, you can finally zoom out and look at the whole timeline to see if we can spot the moment Earth started to trend toward chaos. Let's start with a Bottom-Up analysis._
 
 # BOTTOM-UP APPROACH
 
-#### 2.0 Overall evolution of hyperlink sentiment
+##### 2.0 Overall evolution of hyperlink sentiment
 
-Now that you have finished the tools and identified the main players, let's look at the big picture. The hard part start : putting it all on a timeline. You have millions of data points, so your first task is to calculate the Normalized Conflict Fraction every single month for the entire archive, so from 2014 to 2017 to see if we could spot the moment everything started to slide toward the Great Collapse.
+Now that you have finished the tools and identified the main players, let's look at the big picture. The hard part starts: putting it all on a timeline. You have millions of data points, so your first task is to calculate the **Normalized Conflict Fraction** every single month for the entire archive, so from 2014 to 2017, to see if you could spot the moment everything started to slide toward the Great Collapse.
 
 {% include proportion_negative_over_time.html %}
 
 **The Verdict: It’s a Mess.**
-Look at that graph. If you were hoping for a clean, straight line that tells a simple story, forget it. You can try changing the bin size: day, week, month. But look at the monthly view: it's a mess! The line is jumping all over the place. It's almost impossible to figure out what caused the ups and downs. At this scale, everything is blurred together. A massive political revolution looks the same as a little server crash.
+Look at that graph. If you were hoping for a clean, straight line that tells a simple story, forget it. You can try changing the bin size: day, month, etc. But look at the monthly view: it's a mess! The line is jumping all over the place. It's almost impossible to figure out what caused the ups and downs. At this scale, everything is blurred together. A massive political revolution looks the same as a little server crash.
 
 You have to refine your analysis. You can't analyze 55,000 subreddits one by one. A solution is to use **clustering**.
 
-#### 2.1 Clustering
+##### 2.1 Clustering
 
-Looking at individual subreddit is not that significant and it's quite difficult to interpret, as you could observe in the preliminary analysis.
+Looking at individual subreddits is not that significant and it's quite difficult to interpret, as you could observe in the preliminary analysis.
 
-**What should you do now ?**
+**What should you do now?**
 
-Maybe you should try another approach. What if you looked at the evolution of subreddits that have the same thematic ? Maybe for example, by looking at all the groups about politics, you can observe out of normal behaviours.
+Maybe you should try another approach. What if you looked at the evolution of subreddits that have the same theme? Maybe for example, by looking at all the groups about politics, you can observe out-of-normal behaviours.
 
-But the majority of subreddits aren't very active, with very few posts in the span of 3 years. Taking all the subreddits might give us noisy results. You decided to arbitrarily choose the subreddits with a total post counts of at least **100 posts**.
+But the majority of subreddits aren't very active, with very few posts in the span of 3 years. Taking all the subreddits might give you noisy results. You decided to arbitrarily choose the subreddits with a total post counts of at least **100 posts**.
 
-How are you going to group similar subreddits ? From the last remaining piece of information from earth great collapse, we found ancient representations of the said subreddit that they called **embeddings**. Maybe you can use that to your advantage: what if two similar subreddit had **similar embeddings** ?
+How are you going to group similar subreddits? From the last remaining piece of information from Earth's Great Collapse, you found ancient representations of the said subreddits that they called **embeddings**. Maybe you can use that to your advantage: what if two similar subreddits had **similar embeddings**?
 
 Using a technique called **clustering**, you can group vectors by how close they are to each other. **K-Means** is an unsupervised machine learning algorithm used to group data into K clusters based on similarity.
 
 <details>
-<summary><b>How K-Means works</b></summary>
+<summary><b>How K-Means works?</b></summary>
 <ol>
 <li>Choose the number of clusters (K).</li>
 <li>Initialize (K) centroids (cluster centers).</li>
@@ -101,12 +102,12 @@ Using a technique called **clustering**, you can group vectors by how close they
 </ol>
 </details>
 
-Firstly, to find the optimal number of cluster (i.e the optimal number of different topics), you are going to use the **Elbow Method**.
+Firstly, to find the optimal number of clusters (i.e the optimal number of different topics), you are going to use the **Elbow Method**.
 
 The **Elbow Method** is a heuristic used to choose the optimal number of clusters (K) in clustering algorithms such as K-Means.
 
 <details>
-<summary><b>How the Elbow Method works</b></summary>
+<summary><b>How the Elbow Method works?</b></summary>
 <ol>
 <li>Run the clustering algorithm for different values of (K).</li>
 <li>Compute the within-cluster sum of squares (WCSS) for each (K).</li>
@@ -123,7 +124,7 @@ The elbow represents a good trade-off between model complexity (number of cluste
 
 You find an optimal k of 4. This seems a bit low and not specific enough, you might have too broad cluster subjects. The second best option seems to be a better alternative. You would likely choose 13 clusters.
 
-Secondly, you will apply a method known as the **DB Scan** to remove the outliers that are far away from others subreddits (i.e maybe too unique).
+Secondly, you will apply a method known as the **DB Scan** to remove the outliers that are far away from other subreddits (i.e maybe too unique).
 
 **DBSCAN** is an unsupervised clustering algorithm that groups data based on **point density**, rather than distance to a centroid.
 
@@ -142,20 +143,20 @@ Secondly, you will apply a method known as the **DB Scan** to remove the outlier
 </ol>
 </details>
 
-We now have clusters of similar subreddits ! The question is now: What are their themes ? We could do it ourselves but fortunately our spaceship comes with an **LLM** supercomputer than we can run localy. We feed it a prompt asking for reccurent theme of the list of subreddits of each clusters. Then, we do some manual re-labeling to have more meaningfull topic names and regroup potential similar topics. And finally we merge with the counts per reddit to have the full dataframe, used later in the analysis. This process isn't perfect and some manual labeling adjustments had to be made but this basicaly gives us our main topics !
+You now have clusters of similar subreddits! The question is now: What are their themes? You could do it yourself but fortunately your spaceship comes with an **LLM** supercomputer that you can run localy. You feed it a prompt asking for recurrent themes of the list of subreddits of each cluster. Then, you do some manual re-labeling to have more meaningful topic names and regroup potential similar topics. And finally you merge with the counts per subreddit to have the full dataframe, used later in the analysis. This process isn't perfect and some manual labeling adjustments had to be made but this basically gives you your main topics!
 
 <iframe src='https://flo.uri.sh/visualisation/26536290/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/26536290/?utm_source=embed&utm_campaign=visualisation/26536290' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 
-The map above shows us the different topic groups: the Politics Cluster, the Gaming Cluster, the Neutral News Cluster, and so on. This proves the chaos is organized. 
+The map above shows you the different topic groups: the Politics Cluster, the Gaming Cluster, the Neutral News Cluster, and so on. This proves the chaos is organized. 
 
-#### 2.2 T-SNE/PCA Plotting of clusters
+##### 2.2 T-SNE/PCA Plotting of clusters
 
-Let's now visually confirm that similar subreddits sit close to each other in the embedding space. But right now you have multidimensional vectors that are nos suited for plotting in 2d or 3d. You are going to use the **T-SNE and PCA dimension reduction method**.
+Let's now visually confirm that similar subreddits sit close to each other in the embedding space. But right now you have multidimensional vectors that are not suited for plotting in 2D or 3D. You are going to use the **T-SNE and PCA dimension reduction method**.
 
 **PCA** is a linear dimensionality reduction technique that projects data onto a lower-dimensional space while **maximizing variance**.
 
 <details>
-<summary><b>How PCA works</b></summary>
+<summary><b>How PCA works?</b></summary>
 <ol>
 <li>Center the data.</li>
 <li>Compute the covariance matrix.</li>
@@ -177,7 +178,7 @@ Let's now visually confirm that similar subreddits sit close to each other in th
 **t-SNE** is a non-linear dimensionality reduction method mainly used for **visualizing high-dimensional data** in 2D or 3D.
 
 <details>
-<summary><b>How t-SNE works</b></summary>
+<summary><b>How t-SNE works?</b></summary>
 <ol>
 <li>Convert pairwise distances into probabilities in high-dimensional space.</li>
 <li>Do the same in low-dimensional space.</li>
@@ -201,12 +202,12 @@ Let's now visually confirm that similar subreddits sit close to each other in th
 * On the other hand, the T-SNE plot clearly shows clusters, corresponding to each cluster theme you found. It is important to note that the classification isn't perfect but shows interesting informations still.
 
 
-#### 2.3 Cluster negative and positive comments evolution analysis
+##### 2.3 Cluster negative and positive comments evolution analysis
 Now that you have your clusters, you can analyze the **trend evolution of negative or positive posts** for a given topic.
 
-This could be useful if you want to identify a **significant event** related to a given topic (for example: a major politic event at time t might lead to a significant increase in the trend of the politic cluster.)
+This could be useful if you want to identify a **significant event** related to a given topic (for example: a major politic event at time t might lead to a significant increase in the trend of the political cluster.)
 
-But what is a **significant increase** ?
+But what is a **significant increase**?
 
 You followed two methods:
 <details>
@@ -239,7 +240,7 @@ You followed two methods:
   </div>
 </details>
 
-You are going to take the count evolution on a sliding window of a **given duration** (ex: 3 months). In each time window, You will fit the counts to a Poisson Law and look at the increase or decrease.
+You are going to take the count evolution on a sliding window of a **given duration** (ex: 3 months). In each time window, you will fit the counts to a Poisson Law and look at the increase or decrease.
 
 This method uses a **Generalized Linear Model (GLM) with a Poisson family** to detect **statistically significant increasing trends** in count data over time.
 
